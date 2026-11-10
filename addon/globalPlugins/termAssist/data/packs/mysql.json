@@ -1,0 +1,290 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.mysql",
+   "name": {
+    "th": "MySQL / MariaDB",
+    "en": "MySQL / MariaDB"
+   },
+   "detect": "mysql",
+   "install": "mysql-server"
+  }
+ ],
+ "params": {
+  "mysqldb": {
+   "th": "ฐานข้อมูล",
+   "en": "Database",
+   "default": "",
+   "source": "sudo mysql -N -e 'SHOW DATABASES'"
+  },
+  "dbuser": {
+   "th": "ผู้ใช้ฐานข้อมูล",
+   "en": "Database user",
+   "default": "",
+   "source": "sudo mysql -N -e 'SELECT DISTINCT user FROM mysql.user'"
+  },
+  "dbpass": {
+   "th": "รหัสผ่าน (จะอยู่ในประวัติคำสั่ง)",
+   "en": "Password (stays in shell history)",
+   "default": ""
+  }
+ },
+ "commands": [
+  {
+   "id": "mysql.ver",
+   "cat": "pack.mysql",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน",
+    "en": "Version"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "mysql --version",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.status",
+   "cat": "pack.mysql",
+   "group": "status",
+   "name": {
+    "th": "ดูสถานะบริการ",
+    "en": "Service status"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "systemctl status mysql --no-pager || systemctl status mariadb --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.restart",
+   "cat": "pack.mysql",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ท",
+    "en": "Restart"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo systemctl restart mysql || sudo systemctl restart mariadb",
+   "risk": "medium"
+  },
+  {
+   "id": "mysql.error",
+   "cat": "pack.mysql",
+   "group": "logs",
+   "name": {
+    "th": "error log 50 บรรทัด",
+    "en": "Error log, 50 lines"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo tail -n 50 /var/log/mysql/error.log",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.edit",
+   "cat": "pack.mysql",
+   "group": "config",
+   "name": {
+    "th": "แก้ไขค่าตั้งเซิร์ฟเวอร์",
+    "en": "Edit server config"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf",
+   "risk": "medium"
+  },
+  {
+   "id": "mysql.open",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "เข้า MySQL ด้วย root",
+    "en": "Open MySQL as root"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.dbs",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "รายการฐานข้อมูล",
+    "en": "List databases"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql -N -e 'SHOW DATABASES'",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.tables",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "รายการตารางในฐานข้อมูล",
+    "en": "List tables"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql -N -e 'SHOW TABLES' {mysqldb}",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.size",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "ขนาดของแต่ละฐานข้อมูล (MB)",
+    "en": "Database sizes (MB)"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql -e 'SELECT table_schema AS db, ROUND(SUM(data_length+index_length)/1048576,1) AS MB FROM information_schema.tables GROUP BY table_schema'",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.users",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "รายการผู้ใช้",
+    "en": "List users"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql -e 'SELECT user, host FROM mysql.user'",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.create",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "สร้างฐานข้อมูล (utf8mb4)",
+    "en": "Create database (utf8mb4)"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql -e 'CREATE DATABASE {name} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci'",
+   "risk": "medium"
+  },
+  {
+   "id": "mysql.mkuser",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "สร้างผู้ใช้",
+    "en": "Create user"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql -e \"CREATE USER '{dbuser}'@'localhost' IDENTIFIED BY '{dbpass}'\"",
+   "risk": "medium"
+  },
+  {
+   "id": "mysql.grant",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "ให้สิทธิ์ผู้ใช้ทั้งฐานข้อมูล",
+    "en": "Grant all on database"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql -e \"GRANT ALL PRIVILEGES ON {mysqldb}.* TO '{dbuser}'@'localhost'; FLUSH PRIVILEGES\"",
+   "risk": "medium"
+  },
+  {
+   "id": "mysql.dump",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "สำรองฐานข้อมูล",
+    "en": "Back up database"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysqldump {mysqldb} > {mysqldb}-$(date +%Y%m%d).sql",
+   "risk": "low"
+  },
+  {
+   "id": "mysql.restore",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "นำเข้าไฟล์ SQL",
+    "en": "Restore SQL file"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql {mysqldb} < {file}",
+   "risk": "high"
+  },
+  {
+   "id": "mysql.drop",
+   "cat": "pack.mysql",
+   "group": "tasks",
+   "name": {
+    "th": "ลบฐานข้อมูล",
+    "en": "Drop database"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo mysql -e 'DROP DATABASE {mysqldb}'",
+   "risk": "high"
+  },
+  {
+   "id": "mysql.port",
+   "cat": "pack.mysql",
+   "group": "fix",
+   "name": {
+    "th": "ตรวจพอร์ต 3306",
+    "en": "Check port 3306"
+   },
+   "keywords": [
+    "mysql",
+    "mysql / mariadb"
+   ],
+   "template": "sudo ss -tlpn | grep ':3306 '",
+   "risk": "low"
+  }
+ ]
+}

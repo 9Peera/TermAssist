@@ -1,0 +1,209 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.php",
+   "name": {
+    "th": "PHP / PHP-FPM",
+    "en": "PHP / PHP-FPM"
+   },
+   "detect": "php",
+   "install": "php-fpm"
+  }
+ ],
+ "params": {
+  "phpver": {
+   "th": "เวอร์ชัน PHP (เช่น 8.3)",
+   "en": "PHP version (e.g. 8.3)",
+   "default": "",
+   "source": "ls /etc/php"
+  },
+  "ext": {
+   "th": "ชื่อส่วนขยาย (เช่น mbstring)",
+   "en": "Extension (e.g. mbstring)",
+   "default": ""
+  }
+ },
+ "commands": [
+  {
+   "id": "php.ver",
+   "cat": "pack.php",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน PHP",
+    "en": "PHP version"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "php -v",
+   "risk": "low"
+  },
+  {
+   "id": "php.mods",
+   "cat": "pack.php",
+   "group": "check",
+   "name": {
+    "th": "ส่วนขยายที่ติดตั้ง",
+    "en": "Installed extensions"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "php -m",
+   "risk": "low"
+  },
+  {
+   "id": "php.status",
+   "cat": "pack.php",
+   "group": "status",
+   "name": {
+    "th": "ดูสถานะ PHP-FPM",
+    "en": "PHP-FPM status"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "systemctl status php{phpver}-fpm --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "php.restart",
+   "cat": "pack.php",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ท PHP-FPM",
+    "en": "Restart PHP-FPM"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "sudo systemctl restart php{phpver}-fpm",
+   "risk": "medium"
+  },
+  {
+   "id": "php.reload",
+   "cat": "pack.php",
+   "group": "control",
+   "name": {
+    "th": "โหลดค่าตั้ง PHP-FPM ใหม่",
+    "en": "Reload PHP-FPM"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "sudo systemctl reload php{phpver}-fpm",
+   "risk": "medium"
+  },
+  {
+   "id": "php.log",
+   "cat": "pack.php",
+   "group": "logs",
+   "name": {
+    "th": "log ของ PHP-FPM",
+    "en": "PHP-FPM log"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "sudo tail -n 50 /var/log/php{phpver}-fpm.log",
+   "risk": "low"
+  },
+  {
+   "id": "php.t",
+   "cat": "pack.php",
+   "group": "test",
+   "name": {
+    "th": "ทดสอบค่าตั้ง PHP-FPM",
+    "en": "Test PHP-FPM config"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "sudo php-fpm{phpver} -t",
+   "risk": "low"
+  },
+  {
+   "id": "php.ini",
+   "cat": "pack.php",
+   "group": "config",
+   "name": {
+    "th": "แก้ไข php.ini ของ FPM",
+    "en": "Edit FPM php.ini"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "sudo nano /etc/php/{phpver}/fpm/php.ini",
+   "risk": "medium"
+  },
+  {
+   "id": "php.where",
+   "cat": "pack.php",
+   "group": "config",
+   "name": {
+    "th": "ดูว่าใช้ php.ini ไฟล์ไหน",
+    "en": "Which php.ini is loaded"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "php --ini",
+   "risk": "low"
+  },
+  {
+   "id": "php.setting",
+   "cat": "pack.php",
+   "group": "tasks",
+   "name": {
+    "th": "ค้นหาค่าตั้งของ PHP",
+    "en": "Find a PHP setting"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "php -i | grep -i '{text}'",
+   "risk": "low"
+  },
+  {
+   "id": "php.install",
+   "cat": "pack.php",
+   "group": "tasks",
+   "name": {
+    "th": "ติดตั้งส่วนขยาย",
+    "en": "Install extension"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "sudo apt install -y php{phpver}-{ext}",
+   "risk": "medium"
+  },
+  {
+   "id": "php.composer",
+   "cat": "pack.php",
+   "group": "tasks",
+   "name": {
+    "th": "ติดตั้งแพ็กเกจ Composer ของโปรเจกต์",
+    "en": "Composer install"
+   },
+   "keywords": [
+    "php",
+    "php / php-fpm"
+   ],
+   "template": "composer install --no-dev",
+   "risk": "medium"
+  }
+ ]
+}

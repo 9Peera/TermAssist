@@ -1,0 +1,167 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.redis",
+   "name": {
+    "th": "Redis",
+    "en": "Redis"
+   },
+   "detect": "redis-server",
+   "install": "redis-server"
+  }
+ ],
+ "params": {},
+ "commands": [
+  {
+   "id": "redis.ver",
+   "cat": "pack.redis",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน",
+    "en": "Version"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "redis-server --version",
+   "risk": "low"
+  },
+  {
+   "id": "redis.status",
+   "cat": "pack.redis",
+   "group": "status",
+   "name": {
+    "th": "ดูสถานะบริการ",
+    "en": "Service status"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "systemctl status redis-server --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "redis.ping",
+   "cat": "pack.redis",
+   "group": "status",
+   "name": {
+    "th": "ทดสอบการตอบสนอง",
+    "en": "Ping"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "redis-cli ping",
+   "risk": "low"
+  },
+  {
+   "id": "redis.restart",
+   "cat": "pack.redis",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ท",
+    "en": "Restart"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "sudo systemctl restart redis-server",
+   "risk": "medium"
+  },
+  {
+   "id": "redis.log",
+   "cat": "pack.redis",
+   "group": "logs",
+   "name": {
+    "th": "log 50 บรรทัด",
+    "en": "Log, 50 lines"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "sudo tail -n 50 /var/log/redis/redis-server.log",
+   "risk": "low"
+  },
+  {
+   "id": "redis.edit",
+   "cat": "pack.redis",
+   "group": "config",
+   "name": {
+    "th": "แก้ไข redis.conf",
+    "en": "Edit redis.conf"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "sudo nano /etc/redis/redis.conf",
+   "risk": "medium"
+  },
+  {
+   "id": "redis.mem",
+   "cat": "pack.redis",
+   "group": "tasks",
+   "name": {
+    "th": "การใช้หน่วยความจำ",
+    "en": "Memory usage"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "redis-cli info memory | grep -E 'used_memory_human|maxmemory_human'",
+   "risk": "low"
+  },
+  {
+   "id": "redis.size",
+   "cat": "pack.redis",
+   "group": "tasks",
+   "name": {
+    "th": "จำนวนคีย์",
+    "en": "Number of keys"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "redis-cli dbsize",
+   "risk": "low"
+  },
+  {
+   "id": "redis.keys",
+   "cat": "pack.redis",
+   "group": "tasks",
+   "name": {
+    "th": "ค้นหาคีย์ตามคำขึ้นต้น",
+    "en": "Find keys by prefix"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "redis-cli --scan --pattern '{text}*' | head -n 50",
+   "risk": "low"
+  },
+  {
+   "id": "redis.flush",
+   "cat": "pack.redis",
+   "group": "tasks",
+   "name": {
+    "th": "ลบข้อมูลทั้งหมด",
+    "en": "Flush all data"
+   },
+   "keywords": [
+    "redis",
+    "redis"
+   ],
+   "template": "redis-cli flushall",
+   "risk": "high"
+  }
+ ]
+}

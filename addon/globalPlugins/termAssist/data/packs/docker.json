@@ -1,0 +1,426 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.docker",
+   "name": {
+    "th": "Docker / Compose",
+    "en": "Docker / Compose"
+   },
+   "detect": "docker",
+   "install": "docker.io docker-compose-v2"
+  }
+ ],
+ "params": {
+  "container": {
+   "th": "ชื่อคอนเทนเนอร์",
+   "en": "Container name",
+   "default": "",
+   "source": "docker ps -a --format '{{.Names}}'"
+  },
+  "image": {
+   "th": "อิมเมจ",
+   "en": "Image",
+   "default": "",
+   "source": "docker images --format '{{.Repository}}:{{.Tag}}'"
+  },
+  "csvc": {
+   "th": "บริการใน Compose",
+   "en": "Compose service",
+   "default": "",
+   "source": "docker compose config --services"
+  }
+ },
+ "commands": [
+  {
+   "id": "docker.ver",
+   "cat": "pack.docker",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน Docker และ Compose",
+    "en": "Docker and Compose versions"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker --version; docker compose version",
+   "risk": "low"
+  },
+  {
+   "id": "docker.ps",
+   "cat": "pack.docker",
+   "group": "status",
+   "name": {
+    "th": "คอนเทนเนอร์ที่ทำงานอยู่",
+    "en": "Running containers"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker ps --format '{{.Names}}: {{.Status}}'",
+   "risk": "low"
+  },
+  {
+   "id": "docker.psa",
+   "cat": "pack.docker",
+   "group": "status",
+   "name": {
+    "th": "คอนเทนเนอร์ทั้งหมด",
+    "en": "All containers"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker ps -a --format '{{.Names}}: {{.Status}}'",
+   "risk": "low"
+  },
+  {
+   "id": "docker.stats",
+   "cat": "pack.docker",
+   "group": "status",
+   "name": {
+    "th": "การใช้ CPU และ RAM ของคอนเทนเนอร์",
+    "en": "Container CPU and RAM"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker stats --no-stream --format '{{.Name}}: CPU {{.CPUPerc}}, RAM {{.MemUsage}}'",
+   "risk": "low"
+  },
+  {
+   "id": "docker.cps",
+   "cat": "pack.docker",
+   "group": "status",
+   "name": {
+    "th": "สถานะบริการใน Compose",
+    "en": "Compose service status"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker compose ps --format '{{.Service}}: {{.Status}}'",
+   "risk": "low"
+  },
+  {
+   "id": "docker.start",
+   "cat": "pack.docker",
+   "group": "control",
+   "name": {
+    "th": "เริ่มคอนเทนเนอร์",
+    "en": "Start container"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker start {container}",
+   "risk": "medium"
+  },
+  {
+   "id": "docker.restart",
+   "cat": "pack.docker",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ทคอนเทนเนอร์",
+    "en": "Restart container"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker restart {container}",
+   "risk": "medium"
+  },
+  {
+   "id": "docker.stop",
+   "cat": "pack.docker",
+   "group": "control",
+   "name": {
+    "th": "หยุดคอนเทนเนอร์",
+    "en": "Stop container"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker stop {container}",
+   "risk": "medium"
+  },
+  {
+   "id": "docker.up",
+   "cat": "pack.docker",
+   "group": "control",
+   "name": {
+    "th": "เริ่ม Compose (เบื้องหลัง)",
+    "en": "Compose up (detached)"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker compose up -d",
+   "risk": "medium"
+  },
+  {
+   "id": "docker.crestart",
+   "cat": "pack.docker",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ทบริการใน Compose",
+    "en": "Restart Compose service"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker compose restart {csvc}",
+   "risk": "medium"
+  },
+  {
+   "id": "docker.down",
+   "cat": "pack.docker",
+   "group": "control",
+   "name": {
+    "th": "หยุดและลบคอนเทนเนอร์ของ Compose",
+    "en": "Compose down"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker compose down",
+   "risk": "high"
+  },
+  {
+   "id": "docker.rm",
+   "cat": "pack.docker",
+   "group": "control",
+   "name": {
+    "th": "ลบคอนเทนเนอร์",
+    "en": "Remove container"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker rm {container}",
+   "risk": "high"
+  },
+  {
+   "id": "docker.logs",
+   "cat": "pack.docker",
+   "group": "logs",
+   "name": {
+    "th": "log คอนเทนเนอร์ 100 บรรทัด",
+    "en": "Container log, 100 lines"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker logs --tail 100 {container}",
+   "risk": "low"
+  },
+  {
+   "id": "docker.logsf",
+   "cat": "pack.docker",
+   "group": "logs",
+   "name": {
+    "th": "ติดตาม log คอนเทนเนอร์ (Ctrl+C หยุด)",
+    "en": "Follow container log (Ctrl+C)"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker logs -f --tail 50 {container}",
+   "risk": "low"
+  },
+  {
+   "id": "docker.clogs",
+   "cat": "pack.docker",
+   "group": "logs",
+   "name": {
+    "th": "log ของบริการใน Compose",
+    "en": "Compose service log"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker compose logs --tail 100 {csvc}",
+   "risk": "low"
+  },
+  {
+   "id": "docker.compose",
+   "cat": "pack.docker",
+   "group": "config",
+   "name": {
+    "th": "แก้ไขไฟล์ Compose",
+    "en": "Edit Compose file"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "nano docker-compose.yml",
+   "risk": "low"
+  },
+  {
+   "id": "docker.cconfig",
+   "cat": "pack.docker",
+   "group": "test",
+   "name": {
+    "th": "ตรวจไฟล์ Compose",
+    "en": "Validate Compose file"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker compose config --quiet && echo OK",
+   "risk": "low"
+  },
+  {
+   "id": "docker.shell",
+   "cat": "pack.docker",
+   "group": "tasks",
+   "name": {
+    "th": "เข้า shell ในคอนเทนเนอร์",
+    "en": "Shell into container"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker exec -it {container} sh",
+   "risk": "low"
+  },
+  {
+   "id": "docker.images",
+   "cat": "pack.docker",
+   "group": "tasks",
+   "name": {
+    "th": "ดูอิมเมจทั้งหมด",
+    "en": "List images"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker images --format '{{.Repository}}:{{.Tag}} {{.Size}}'",
+   "risk": "low"
+  },
+  {
+   "id": "docker.pull",
+   "cat": "pack.docker",
+   "group": "tasks",
+   "name": {
+    "th": "ดาวน์โหลดอิมเมจ",
+    "en": "Pull image"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker pull {image}",
+   "risk": "low"
+  },
+  {
+   "id": "docker.cpull",
+   "cat": "pack.docker",
+   "group": "tasks",
+   "name": {
+    "th": "อัปเดตอิมเมจของ Compose แล้วเริ่มใหม่",
+    "en": "Pull Compose images and recreate"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker compose pull && docker compose up -d",
+   "risk": "medium"
+  },
+  {
+   "id": "docker.ip",
+   "cat": "pack.docker",
+   "group": "tasks",
+   "name": {
+    "th": "ดู IP ของคอนเทนเนอร์",
+    "en": "Container IP address"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' {container}",
+   "risk": "low"
+  },
+  {
+   "id": "docker.state",
+   "cat": "pack.docker",
+   "group": "fix",
+   "name": {
+    "th": "ดูสถานะและข้อผิดพลาดของคอนเทนเนอร์",
+    "en": "Container state and error"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker inspect --format '{{.State.Status}} exit={{.State.ExitCode}} {{.State.Error}}' {container}",
+   "risk": "low"
+  },
+  {
+   "id": "docker.df",
+   "cat": "pack.docker",
+   "group": "fix",
+   "name": {
+    "th": "ดูพื้นที่ที่ Docker ใช้",
+    "en": "Docker disk usage"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker system df",
+   "risk": "low"
+  },
+  {
+   "id": "docker.prune",
+   "cat": "pack.docker",
+   "group": "fix",
+   "name": {
+    "th": "ล้างสิ่งที่ไม่ใช้ (คอนเทนเนอร์หยุด อิมเมจค้าง)",
+    "en": "Prune unused data"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "docker system prune -f",
+   "risk": "high"
+  },
+  {
+   "id": "docker.daemon",
+   "cat": "pack.docker",
+   "group": "fix",
+   "name": {
+    "th": "รีสตาร์ท Docker daemon",
+    "en": "Restart Docker daemon"
+   },
+   "keywords": [
+    "docker",
+    "docker / compose"
+   ],
+   "template": "sudo systemctl restart docker",
+   "risk": "high"
+  }
+ ]
+}

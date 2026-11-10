@@ -1,0 +1,448 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: termAssist\n"
+"Report-Msgid-Bugs-To: https://github.com/9Peera/termAssist/issues\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: globalPlugins/termAssist/__init__.py:415
+msgid "Press NVDA+Control+Shift+P, then:"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:303
+msgid "TermAssist: status of nano, vim, pager, top or htop"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:331
+msgid "Getting the list from the server"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:395
+msgid "Enter the TermAssist command layer"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:416
+msgid "TermAssist help"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:411
+msgid "TermAssist: list layer commands"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:443
+msgid "TermAssist: read the current command"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:451
+msgid "TermAssist: read the top line of the screen"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:458
+msgid "TermAssist: read the bottom line of the screen"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:465
+msgid "TermAssist: summary of the last command"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:492
+msgid "Output: "
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:483
+msgid "TermAssist: view output of the last command"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:504
+msgid "Terminal history"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:495
+msgid "TermAssist: view the whole output history"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:506
+msgid "TermAssist: session information"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:531
+msgid "TermAssist: toggle the command finished sound"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:580
+msgid "TermAssist diagnostics (copied)"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:537
+msgid "TermAssist: diagnostics report"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:583
+msgid "TermAssist: edit the current command line"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:597
+msgid "TermAssist: compose multi-line text or write a file"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:611
+msgid "TermAssist: command library"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:664
+msgid "Service not installed"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:163
+msgid "Not in a terminal"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:311
+msgid "No full-screen program detected"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:324
+msgid "The terminal is not at a prompt; type the value instead"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:354
+msgid "No answer from the server"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:367
+msgid "Password prompt, typing echo muted"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:426
+msgid "No line"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:429
+msgid "blank"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:438
+msgid "Nothing to copy"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:441
+msgid "Copied: "
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:449
+msgid "Command line is empty"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:475
+msgid "No command yet"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:490
+msgid "No output"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:502
+msgid "No history"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:518
+msgid "Prompt not recognized"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:521
+msgid "command running"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:535
+msgid "Finished sound on"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:535
+msgid "Finished sound off"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:651
+msgid "Checking which services this server has"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:666
+msgid "&Install"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:666
+msgid "&Use anyway"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:666
+msgid "Cancel"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:685
+msgid "none"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:299
+msgid "End"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:672
+msgid "Installing. Run Detect services again when it finishes."
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:706
+msgid "(Leave blank and press OK to choose from a list on the server)"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:753
+msgid "Confirm"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:708
+msgid "(Type the value. Press Cancel to stop.)"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:719
+msgid "A value is required; command not sent"
+msgstr ""
+
+#: globalPlugins/termAssist/__init__.py:730
+msgid "No items. "
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:123
+msgid " (installed)"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:33
+msgid "&Command:"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:59
+msgid "&Text:"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:67
+msgid "File &path:"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:121
+msgid "&Search (Thai or English):"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:124
+msgid "All categories"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:124
+msgid "Favorites"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:124
+msgid "Recently used"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:126
+msgid "Cate&gory:"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:128
+msgid "C&ommands:"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:130
+msgid "&Details:"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:248
+msgid "Name of the command:"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:248
+msgid "New command"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:252
+msgid "Command (use {name} for values to ask, e.g. {file}):"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:30
+msgid "TermAssist — Edit command"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:36
+msgid "&Replace"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:37
+msgid "Replace and r&un"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:56
+msgid "TermAssist — Compose text"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:73
+msgid "Se&nd"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:111
+msgid "TermAssist — Command library"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:133
+msgid "&Insert"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:134
+msgid "&Run"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:135
+msgid "&Copy"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:136
+msgid "Add to &favorites"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:137
+msgid "&New command..."
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:138
+msgid "De&lete"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:139
+msgid "Detect ser&vices"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:140
+msgid "Close"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:186
+msgid "No matching commands."
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:200
+msgid "Command: "
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:201
+msgid "Category: "
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:202
+msgid "Risk: "
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:214
+msgid "Note: full-screen program, harder to read with a screen reader."
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:219
+msgid "Remove from &favorites"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:240
+msgid "Added to favorites"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:240
+msgid "Removed from favorites"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:61
+msgid "Send as"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:68
+msgid "Use &sudo (system file)"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:69
+msgid "&Append to the end of the file"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:70
+msgid "Press &Enter after sending"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:210
+msgid " (list from server)"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:212
+msgid "You will be asked for: "
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:63
+msgid "&Commands (each line is a command)"
+msgstr ""
+
+#: globalPlugins/termAssist/dialogs.py:64
+msgid "Content of a &file"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:68
+msgid "&Method for sending text:"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:76
+msgid "&Keys that clear the command line:"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:79
+msgid "Custom prompt &regular expression (empty = default):"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:83
+msgid "Other terminal programs, experimental (app names, comma separated):"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:87
+msgid "Check the screen every (&milliseconds):"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:91
+msgid "&History size (lines):"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:56
+msgid "Beep when a command &finishes"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:57
+msgid "Speak the number of output &lines when done"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:58
+msgid "Announce when a command finishes in a terminal that is &not focused"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:59
+msgid "Play a sound when the output contains an &error"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:60
+msgid "Mute typed characters at &password prompts"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:61
+msgid "Announce nano, vim and pager &status changes"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:99
+msgid "The prompt regular expression is not valid."
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:71
+msgid "Paste through the clipboard (Shift+Insert)"
+msgstr ""
+
+#: globalPlugins/termAssist/settings.py:72
+msgid "Type characters directly (PuTTY family only)"
+msgstr ""

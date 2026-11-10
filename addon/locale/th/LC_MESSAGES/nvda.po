@@ -1,0 +1,449 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: termAssist\n"
+"Report-Msgid-Bugs-To: https://github.com/9Peera/termAssist/issues\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: globalPlugins/termAssist/__init__.py:415
+msgid "Press NVDA+Control+Shift+P, then:"
+msgstr "กด NVDA+Control+Shift+P แล้วกด:"
+
+#: globalPlugins/termAssist/__init__.py:303
+msgid "TermAssist: status of nano, vim, pager, top or htop"
+msgstr "TermAssist: สถานะของ nano, vim, โหมดอ่านทีละหน้า, top หรือ htop"
+
+#: globalPlugins/termAssist/__init__.py:331
+msgid "Getting the list from the server"
+msgstr "กำลังดึงรายการจากเซิร์ฟเวอร์"
+
+#: globalPlugins/termAssist/__init__.py:395
+msgid "Enter the TermAssist command layer"
+msgstr "เข้าโหมดคำสั่ง TermAssist"
+
+#: globalPlugins/termAssist/__init__.py:416
+msgid "TermAssist help"
+msgstr "ความช่วยเหลือ TermAssist"
+
+#: globalPlugins/termAssist/__init__.py:411
+msgid "TermAssist: list layer commands"
+msgstr "TermAssist: แสดงปุ่มในโหมดคำสั่ง"
+
+#: globalPlugins/termAssist/__init__.py:443
+msgid "TermAssist: read the current command"
+msgstr "TermAssist: อ่านคำสั่งในบรรทัดปัจจุบัน"
+
+#: globalPlugins/termAssist/__init__.py:451
+msgid "TermAssist: read the top line of the screen"
+msgstr "TermAssist: อ่านบรรทัดบนสุดของหน้าจอ"
+
+#: globalPlugins/termAssist/__init__.py:458
+msgid "TermAssist: read the bottom line of the screen"
+msgstr "TermAssist: อ่านบรรทัดล่างสุดของหน้าจอ"
+
+#: globalPlugins/termAssist/__init__.py:465
+msgid "TermAssist: summary of the last command"
+msgstr "TermAssist: สรุปผลคำสั่งล่าสุด"
+
+#: globalPlugins/termAssist/__init__.py:492
+msgid "Output: "
+msgstr "ผลลัพธ์: "
+
+#: globalPlugins/termAssist/__init__.py:483
+msgid "TermAssist: view output of the last command"
+msgstr "TermAssist: ดูผลลัพธ์ของคำสั่งล่าสุด"
+
+#: globalPlugins/termAssist/__init__.py:504
+msgid "Terminal history"
+msgstr "ประวัติเทอร์มินัล"
+
+#: globalPlugins/termAssist/__init__.py:495
+msgid "TermAssist: view the whole output history"
+msgstr "TermAssist: ดูประวัติผลลัพธ์ทั้งหมด"
+
+#: globalPlugins/termAssist/__init__.py:506
+msgid "TermAssist: session information"
+msgstr "TermAssist: ข้อมูลเซสชัน"
+
+#: globalPlugins/termAssist/__init__.py:531
+msgid "TermAssist: toggle the command finished sound"
+msgstr "TermAssist: เปิด/ปิดเสียงแจ้งคำสั่งเสร็จ"
+
+#: globalPlugins/termAssist/__init__.py:580
+msgid "TermAssist diagnostics (copied)"
+msgstr "รายงานวินิจฉัย TermAssist (คัดลอกแล้ว)"
+
+#: globalPlugins/termAssist/__init__.py:537
+msgid "TermAssist: diagnostics report"
+msgstr "TermAssist: รายงานวินิจฉัย"
+
+#: globalPlugins/termAssist/__init__.py:583
+msgid "TermAssist: edit the current command line"
+msgstr "TermAssist: แก้ไขคำสั่งในบรรทัดปัจจุบัน"
+
+#: globalPlugins/termAssist/__init__.py:597
+msgid "TermAssist: compose multi-line text or write a file"
+msgstr "TermAssist: เขียนข้อความหลายบรรทัดหรือเขียนไฟล์"
+
+#: globalPlugins/termAssist/__init__.py:611
+msgid "TermAssist: command library"
+msgstr "TermAssist: คลังคำสั่ง"
+
+#: globalPlugins/termAssist/__init__.py:664
+msgid "Service not installed"
+msgstr "ยังไม่ได้ติดตั้งบริการ"
+
+#: globalPlugins/termAssist/__init__.py:163
+msgid "Not in a terminal"
+msgstr "ไม่ได้อยู่ในเทอร์มินัล"
+
+#: globalPlugins/termAssist/__init__.py:311
+msgid "No full-screen program detected"
+msgstr "ไม่พบโปรแกรมเต็มจอ"
+
+#: globalPlugins/termAssist/__init__.py:324
+msgid "The terminal is not at a prompt; type the value instead"
+msgstr "เทอร์มินัลยังไม่อยู่ที่ prompt กรุณาพิมพ์ค่าเอง"
+
+#: globalPlugins/termAssist/__init__.py:354
+msgid "No answer from the server"
+msgstr "เซิร์ฟเวอร์ไม่ตอบ"
+
+#: globalPlugins/termAssist/__init__.py:367
+msgid "Password prompt, typing echo muted"
+msgstr "ป้อนรหัสผ่าน ปิดเสียงตัวอักษรที่พิมพ์แล้ว"
+
+#: globalPlugins/termAssist/__init__.py:426
+msgid "No line"
+msgstr "ไม่มีบรรทัด"
+
+#: globalPlugins/termAssist/__init__.py:429
+msgid "blank"
+msgstr "ว่าง"
+
+#: globalPlugins/termAssist/__init__.py:438
+msgid "Nothing to copy"
+msgstr "ไม่มีข้อความให้คัดลอก"
+
+#: globalPlugins/termAssist/__init__.py:441
+msgid "Copied: "
+msgstr "คัดลอกแล้ว: "
+
+#: globalPlugins/termAssist/__init__.py:449
+msgid "Command line is empty"
+msgstr "บรรทัดคำสั่งว่าง"
+
+#: globalPlugins/termAssist/__init__.py:475
+msgid "No command yet"
+msgstr "ยังไม่มีคำสั่ง"
+
+#: globalPlugins/termAssist/__init__.py:490
+msgid "No output"
+msgstr "ไม่มีผลลัพธ์"
+
+#: globalPlugins/termAssist/__init__.py:502
+msgid "No history"
+msgstr "ไม่มีประวัติ"
+
+#: globalPlugins/termAssist/__init__.py:518
+msgid "Prompt not recognized"
+msgstr "ไม่รู้จักรูปแบบ prompt"
+
+#: globalPlugins/termAssist/__init__.py:521
+msgid "command running"
+msgstr "คำสั่งกำลังทำงาน"
+
+#: globalPlugins/termAssist/__init__.py:535
+msgid "Finished sound on"
+msgstr "เปิดเสียงแจ้งคำสั่งเสร็จ"
+
+#: globalPlugins/termAssist/__init__.py:535
+msgid "Finished sound off"
+msgstr "ปิดเสียงแจ้งคำสั่งเสร็จ"
+
+#: globalPlugins/termAssist/__init__.py:651
+msgid "Checking which services this server has"
+msgstr "กำลังตรวจว่าเครื่องนี้มีบริการอะไรบ้าง"
+
+#: globalPlugins/termAssist/__init__.py:666
+msgid "&Install"
+msgstr "&ติดตั้ง"
+
+#: globalPlugins/termAssist/__init__.py:666
+msgid "&Use anyway"
+msgstr "&ใช้คำสั่งต่อ"
+
+#: globalPlugins/termAssist/__init__.py:666
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: globalPlugins/termAssist/__init__.py:685
+msgid "none"
+msgstr "ไม่มี"
+
+#: globalPlugins/termAssist/__init__.py:299
+msgid "End"
+msgstr "จบเอกสาร"
+
+#: globalPlugins/termAssist/__init__.py:672
+msgid "Installing. Run Detect services again when it finishes."
+msgstr "กำลังติดตั้ง เมื่อเสร็จแล้วให้กดตรวจหาบริการในเครื่องอีกครั้ง"
+
+#: globalPlugins/termAssist/__init__.py:706
+msgid "(Leave blank and press OK to choose from a list on the server)"
+msgstr "(เว้นว่างแล้วกด ตกลง เพื่อเลือกจากรายการบนเซิร์ฟเวอร์)"
+
+#: globalPlugins/termAssist/__init__.py:753
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#: globalPlugins/termAssist/__init__.py:708
+msgid "(Type the value. Press Cancel to stop.)"
+msgstr "(พิมพ์ค่าเอง หรือกด ยกเลิก เพื่อหยุด)"
+
+#: globalPlugins/termAssist/__init__.py:719
+msgid "A value is required; command not sent"
+msgstr "ต้องกรอกค่า จึงยังไม่ส่งคำสั่ง"
+
+#: globalPlugins/termAssist/__init__.py:730
+msgid "No items. "
+msgstr "ไม่พบรายการ "
+
+#: globalPlugins/termAssist/dialogs.py:123
+msgid " (installed)"
+msgstr " (มีในเครื่อง)"
+
+#: globalPlugins/termAssist/dialogs.py:33
+msgid "&Command:"
+msgstr "&คำสั่ง:"
+
+#: globalPlugins/termAssist/dialogs.py:59
+msgid "&Text:"
+msgstr "&ข้อความ:"
+
+#: globalPlugins/termAssist/dialogs.py:67
+msgid "File &path:"
+msgstr "&ตำแหน่งไฟล์:"
+
+#: globalPlugins/termAssist/dialogs.py:121
+msgid "&Search (Thai or English):"
+msgstr "&ค้นหา (ไทยหรืออังกฤษ):"
+
+#: globalPlugins/termAssist/dialogs.py:124
+msgid "All categories"
+msgstr "ทุกหมวด"
+
+#: globalPlugins/termAssist/dialogs.py:124
+msgid "Favorites"
+msgstr "รายการโปรด"
+
+#: globalPlugins/termAssist/dialogs.py:124
+msgid "Recently used"
+msgstr "ใช้ล่าสุด"
+
+#: globalPlugins/termAssist/dialogs.py:126
+msgid "Cate&gory:"
+msgstr "ห&มวด:"
+
+#: globalPlugins/termAssist/dialogs.py:128
+msgid "C&ommands:"
+msgstr "คำ&สั่ง:"
+
+#: globalPlugins/termAssist/dialogs.py:130
+msgid "&Details:"
+msgstr "&รายละเอียด:"
+
+#: globalPlugins/termAssist/dialogs.py:248
+msgid "Name of the command:"
+msgstr "ชื่อคำสั่ง:"
+
+#: globalPlugins/termAssist/dialogs.py:248
+msgid "New command"
+msgstr "เพิ่มคำสั่งใหม่"
+
+#: globalPlugins/termAssist/dialogs.py:252
+msgid "Command (use {name} for values to ask, e.g. {file}):"
+msgstr "คำสั่ง (ใช้ {ชื่อ} สำหรับค่าที่ต้องถาม เช่น {file}):"
+
+#: globalPlugins/termAssist/dialogs.py:30
+msgid "TermAssist — Edit command"
+msgstr "TermAssist — แก้ไขคำสั่ง"
+
+#: globalPlugins/termAssist/dialogs.py:36
+msgid "&Replace"
+msgstr "&แทนที่"
+
+#: globalPlugins/termAssist/dialogs.py:37
+msgid "Replace and r&un"
+msgstr "แทนที่และ&รัน"
+
+#: globalPlugins/termAssist/dialogs.py:56
+msgid "TermAssist — Compose text"
+msgstr "TermAssist — เขียนข้อความหลายบรรทัด"
+
+#: globalPlugins/termAssist/dialogs.py:73
+msgid "Se&nd"
+msgstr "&ส่ง"
+
+#: globalPlugins/termAssist/dialogs.py:111
+msgid "TermAssist — Command library"
+msgstr "TermAssist — คลังคำสั่ง"
+
+#: globalPlugins/termAssist/dialogs.py:133
+msgid "&Insert"
+msgstr "แ&ทรก"
+
+#: globalPlugins/termAssist/dialogs.py:134
+msgid "&Run"
+msgstr "&รัน"
+
+#: globalPlugins/termAssist/dialogs.py:135
+msgid "&Copy"
+msgstr "&คัดลอก"
+
+#: globalPlugins/termAssist/dialogs.py:136
+msgid "Add to &favorites"
+msgstr "เพิ่มใน&รายการโปรด"
+
+#: globalPlugins/termAssist/dialogs.py:137
+msgid "&New command..."
+msgstr "เพิ่มคำสั่ง&ใหม่..."
+
+#: globalPlugins/termAssist/dialogs.py:138
+msgid "De&lete"
+msgstr "&ลบ"
+
+#: globalPlugins/termAssist/dialogs.py:139
+msgid "Detect ser&vices"
+msgstr "ตรวจหา&บริการในเครื่อง"
+
+#: globalPlugins/termAssist/dialogs.py:140
+msgid "Close"
+msgstr "ปิด"
+
+#: globalPlugins/termAssist/dialogs.py:186
+msgid "No matching commands."
+msgstr "ไม่พบคำสั่งที่ตรงกัน"
+
+#: globalPlugins/termAssist/dialogs.py:200
+msgid "Command: "
+msgstr "คำสั่ง: "
+
+#: globalPlugins/termAssist/dialogs.py:201
+msgid "Category: "
+msgstr "หมวด: "
+
+#: globalPlugins/termAssist/dialogs.py:202
+msgid "Risk: "
+msgstr "ความเสี่ยง: "
+
+#: globalPlugins/termAssist/dialogs.py:214
+msgid "Note: full-screen program, harder to read with a screen reader."
+msgstr "หมายเหตุ: เป็นโปรแกรมเต็มจอ อ่านด้วยโปรแกรมอ่านหน้าจอได้ยากกว่า"
+
+#: globalPlugins/termAssist/dialogs.py:219
+msgid "Remove from &favorites"
+msgstr "นำออกจาก&รายการโปรด"
+
+#: globalPlugins/termAssist/dialogs.py:240
+msgid "Added to favorites"
+msgstr "เพิ่มในรายการโปรดแล้ว"
+
+#: globalPlugins/termAssist/dialogs.py:240
+msgid "Removed from favorites"
+msgstr "นำออกจากรายการโปรดแล้ว"
+
+#: globalPlugins/termAssist/dialogs.py:61
+msgid "Send as"
+msgstr "ส่งเป็น"
+
+#: globalPlugins/termAssist/dialogs.py:68
+msgid "Use &sudo (system file)"
+msgstr "ใช้ &sudo (ไฟล์ระบบ)"
+
+#: globalPlugins/termAssist/dialogs.py:69
+msgid "&Append to the end of the file"
+msgstr "&ต่อท้ายไฟล์เดิม"
+
+#: globalPlugins/termAssist/dialogs.py:70
+msgid "Press &Enter after sending"
+msgstr "กด &Enter หลังส่ง"
+
+#: globalPlugins/termAssist/dialogs.py:210
+msgid " (list from server)"
+msgstr " (เลือกจากเซิร์ฟเวอร์ได้)"
+
+#: globalPlugins/termAssist/dialogs.py:212
+msgid "You will be asked for: "
+msgstr "จะถามค่า: "
+
+#: globalPlugins/termAssist/dialogs.py:63
+msgid "&Commands (each line is a command)"
+msgstr "&คำสั่ง (แต่ละบรรทัดคือหนึ่งคำสั่ง)"
+
+#: globalPlugins/termAssist/dialogs.py:64
+msgid "Content of a &file"
+msgstr "เนื้อหาของ&ไฟล์"
+
+#: globalPlugins/termAssist/settings.py:68
+msgid "&Method for sending text:"
+msgstr "วิธี&ส่งข้อความเข้าเทอร์มินัล:"
+
+#: globalPlugins/termAssist/settings.py:76
+msgid "&Keys that clear the command line:"
+msgstr "ปุ่มที่ใช้&ล้างบรรทัดคำสั่ง:"
+
+#: globalPlugins/termAssist/settings.py:79
+msgid "Custom prompt &regular expression (empty = default):"
+msgstr "&Regex ของ prompt แบบกำหนดเอง (ว่าง = ค่าเริ่มต้น):"
+
+#: globalPlugins/termAssist/settings.py:83
+msgid "Other terminal programs, experimental (app names, comma separated):"
+msgstr "โปรแกรมเทอร์มินัลอื่น แบบทดลอง (ชื่อแอป คั่นด้วยจุลภาค):"
+
+#: globalPlugins/termAssist/settings.py:87
+msgid "Check the screen every (&milliseconds):"
+msgstr "ตรวจหน้าจอทุก ๆ (&มิลลิวินาที):"
+
+#: globalPlugins/termAssist/settings.py:91
+msgid "&History size (lines):"
+msgstr "ขนาด&ประวัติ (บรรทัด):"
+
+#: globalPlugins/termAssist/settings.py:56
+msgid "Beep when a command &finishes"
+msgstr "ส่งเสียงเมื่อคำสั่ง&ทำงานเสร็จ"
+
+#: globalPlugins/termAssist/settings.py:57
+msgid "Speak the number of output &lines when done"
+msgstr "บอก&จำนวนบรรทัดผลลัพธ์เมื่อเสร็จ"
+
+#: globalPlugins/termAssist/settings.py:58
+msgid "Announce when a command finishes in a terminal that is &not focused"
+msgstr "แจ้งเมื่อคำสั่งเสร็จในเทอร์มินัลที่&ไม่ได้โฟกัสอยู่"
+
+#: globalPlugins/termAssist/settings.py:59
+msgid "Play a sound when the output contains an &error"
+msgstr "ส่งเสียงเมื่อพบ&ข้อผิดพลาดในผลลัพธ์"
+
+#: globalPlugins/termAssist/settings.py:60
+msgid "Mute typed characters at &password prompts"
+msgstr "ปิดเสียงอ่านตัวอักษรที่พิมพ์เมื่อป้อน&รหัสผ่าน"
+
+#: globalPlugins/termAssist/settings.py:61
+msgid "Announce nano, vim and pager &status changes"
+msgstr "บอก&สถานะของ nano, vim และโหมดอ่านทีละหน้า"
+
+#: globalPlugins/termAssist/settings.py:99
+msgid "The prompt regular expression is not valid."
+msgstr "Regex ของ prompt ไม่ถูกต้อง"
+
+#: globalPlugins/termAssist/settings.py:71
+msgid "Paste through the clipboard (Shift+Insert)"
+msgstr "วางผ่านคลิปบอร์ด (Shift+Insert)"
+
+#: globalPlugins/termAssist/settings.py:72
+msgid "Type characters directly (PuTTY family only)"
+msgstr "พิมพ์ตัวอักษรโดยตรง (เฉพาะกลุ่ม PuTTY)"

@@ -1,0 +1,254 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.apache",
+   "name": {
+    "th": "Apache",
+    "en": "Apache"
+   },
+   "detect": "apache2",
+   "install": "apache2"
+  }
+ ],
+ "params": {
+  "asite": {
+   "th": "ชื่อไซต์ Apache",
+   "en": "Apache site",
+   "default": "",
+   "source": "ls /etc/apache2/sites-available"
+  },
+  "module": {
+   "th": "ชื่อโมดูล",
+   "en": "Module name",
+   "default": ""
+  }
+ },
+ "commands": [
+  {
+   "id": "apache.ver",
+   "cat": "pack.apache",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน Apache",
+    "en": "Apache version"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "apache2 -v",
+   "risk": "low"
+  },
+  {
+   "id": "apache.status",
+   "cat": "pack.apache",
+   "group": "status",
+   "name": {
+    "th": "ดูสถานะ Apache",
+    "en": "Apache status"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "systemctl status apache2 --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "apache.reload",
+   "cat": "pack.apache",
+   "group": "control",
+   "name": {
+    "th": "โหลดค่าตั้งใหม่",
+    "en": "Reload"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo systemctl reload apache2",
+   "risk": "medium"
+  },
+  {
+   "id": "apache.restart",
+   "cat": "pack.apache",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ท",
+    "en": "Restart"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo systemctl restart apache2",
+   "risk": "medium"
+  },
+  {
+   "id": "apache.stop",
+   "cat": "pack.apache",
+   "group": "control",
+   "name": {
+    "th": "หยุด Apache",
+    "en": "Stop Apache"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo systemctl stop apache2",
+   "risk": "high"
+  },
+  {
+   "id": "apache.error",
+   "cat": "pack.apache",
+   "group": "logs",
+   "name": {
+    "th": "error log 50 บรรทัด",
+    "en": "Error log, 50 lines"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo tail -n 50 /var/log/apache2/error.log",
+   "risk": "low"
+  },
+  {
+   "id": "apache.access",
+   "cat": "pack.apache",
+   "group": "logs",
+   "name": {
+    "th": "access log 50 บรรทัด",
+    "en": "Access log, 50 lines"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo tail -n 50 /var/log/apache2/access.log",
+   "risk": "low"
+  },
+  {
+   "id": "apache.t",
+   "cat": "pack.apache",
+   "group": "test",
+   "name": {
+    "th": "ทดสอบค่าตั้ง",
+    "en": "Test configuration"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo apache2ctl configtest",
+   "risk": "low"
+  },
+  {
+   "id": "apache.editsite",
+   "cat": "pack.apache",
+   "group": "config",
+   "name": {
+    "th": "แก้ไขค่าตั้งไซต์",
+    "en": "Edit site config"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo nano /etc/apache2/sites-available/{asite}",
+   "risk": "medium"
+  },
+  {
+   "id": "apache.editmain",
+   "cat": "pack.apache",
+   "group": "config",
+   "name": {
+    "th": "แก้ไข apache2.conf",
+    "en": "Edit apache2.conf"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo nano /etc/apache2/apache2.conf",
+   "risk": "medium"
+  },
+  {
+   "id": "apache.ensite",
+   "cat": "pack.apache",
+   "group": "tasks",
+   "name": {
+    "th": "เปิดใช้ไซต์",
+    "en": "Enable site"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo a2ensite {asite} && sudo systemctl reload apache2",
+   "risk": "medium"
+  },
+  {
+   "id": "apache.dissite",
+   "cat": "pack.apache",
+   "group": "tasks",
+   "name": {
+    "th": "ปิดใช้ไซต์",
+    "en": "Disable site"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo a2dissite {asite} && sudo systemctl reload apache2",
+   "risk": "high"
+  },
+  {
+   "id": "apache.enmod",
+   "cat": "pack.apache",
+   "group": "tasks",
+   "name": {
+    "th": "เปิดใช้โมดูล",
+    "en": "Enable module"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo a2enmod {module} && sudo systemctl restart apache2",
+   "risk": "medium"
+  },
+  {
+   "id": "apache.mods",
+   "cat": "pack.apache",
+   "group": "tasks",
+   "name": {
+    "th": "รายการโมดูลที่โหลดอยู่",
+    "en": "Loaded modules"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "apache2ctl -M",
+   "risk": "low"
+  },
+  {
+   "id": "apache.ports",
+   "cat": "pack.apache",
+   "group": "fix",
+   "name": {
+    "th": "ตรวจพอร์ต 80/443",
+    "en": "Check ports 80/443"
+   },
+   "keywords": [
+    "apache",
+    "apache"
+   ],
+   "template": "sudo ss -tlpn | grep -E ':(80|443) '",
+   "risk": "low"
+  }
+ ]
+}

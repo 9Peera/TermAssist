@@ -1,0 +1,1958 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "system",
+   "name": {
+    "th": "ข้อมูลระบบ",
+    "en": "System information"
+   }
+  },
+  {
+   "id": "files",
+   "name": {
+    "th": "ไฟล์และโฟลเดอร์",
+    "en": "Files and folders"
+   }
+  },
+  {
+   "id": "view",
+   "name": {
+    "th": "ดูเนื้อหาไฟล์",
+    "en": "View file contents"
+   }
+  },
+  {
+   "id": "edit",
+   "name": {
+    "th": "แก้ไขไฟล์",
+    "en": "Edit files"
+   }
+  },
+  {
+   "id": "users",
+   "name": {
+    "th": "ผู้ใช้และสิทธิ์",
+    "en": "Users and permissions"
+   }
+  },
+  {
+   "id": "packages",
+   "name": {
+    "th": "แพ็กเกจ (apt)",
+    "en": "Packages (apt)"
+   }
+  },
+  {
+   "id": "services",
+   "name": {
+    "th": "บริการ (systemd)",
+    "en": "Services (systemd)"
+   }
+  },
+  {
+   "id": "processes",
+   "name": {
+    "th": "ทรัพยากรและโปรเซส",
+    "en": "Resources and processes"
+   }
+  },
+  {
+   "id": "network",
+   "name": {
+    "th": "เครือข่าย",
+    "en": "Network"
+   }
+  },
+  {
+   "id": "security",
+   "name": {
+    "th": "ไฟร์วอลล์และความปลอดภัย",
+    "en": "Firewall and security"
+   }
+  },
+  {
+   "id": "logs",
+   "name": {
+    "th": "Log",
+    "en": "Logs"
+   }
+  },
+  {
+   "id": "archive",
+   "name": {
+    "th": "บีบอัด สำรอง และโอนไฟล์",
+    "en": "Archive, backup and transfer"
+   }
+  },
+  {
+   "id": "disk",
+   "name": {
+    "th": "ดิสก์",
+    "en": "Disks"
+   }
+  },
+  {
+   "id": "schedule",
+   "name": {
+    "th": "ตั้งเวลางาน",
+    "en": "Scheduled jobs"
+   }
+  },
+  {
+   "id": "webdb",
+   "name": {
+    "th": "เว็บ ฐานข้อมูล และคอนเทนเนอร์",
+    "en": "Web, database and containers"
+   }
+  }
+ ],
+ "groups": {
+  "check": {
+   "th": "ตรวจการติดตั้งและเวอร์ชัน",
+   "en": "Installed and version"
+  },
+  "status": {
+   "th": "สถานะ",
+   "en": "Status"
+  },
+  "control": {
+   "th": "เริ่ม หยุด รีสตาร์ท",
+   "en": "Start, stop, restart"
+  },
+  "logs": {
+   "th": "Log",
+   "en": "Logs"
+  },
+  "test": {
+   "th": "ทดสอบค่าตั้ง",
+   "en": "Test configuration"
+  },
+  "config": {
+   "th": "ไฟล์ค่าตั้ง",
+   "en": "Configuration files"
+  },
+  "tasks": {
+   "th": "งานที่ทำบ่อย",
+   "en": "Common tasks"
+  },
+  "fix": {
+   "th": "แก้ปัญหา",
+   "en": "Troubleshooting"
+  }
+ },
+ "params": {
+  "file": {
+   "th": "ไฟล์",
+   "en": "File",
+   "default": "",
+   "source": "ls -1Ap | grep -v '/$'"
+  },
+  "file1": {
+   "th": "ไฟล์ที่ 1",
+   "en": "First file",
+   "default": ""
+  },
+  "file2": {
+   "th": "ไฟล์ที่ 2",
+   "en": "Second file",
+   "default": ""
+  },
+  "path": {
+   "th": "โฟลเดอร์/ตำแหน่ง",
+   "en": "Folder/path",
+   "default": ".",
+   "source": "ls -1d */"
+  },
+  "source": {
+   "th": "ต้นทาง",
+   "en": "Source",
+   "default": ""
+  },
+  "dest": {
+   "th": "ปลายทาง",
+   "en": "Destination",
+   "default": ""
+  },
+  "target": {
+   "th": "เป้าหมาย",
+   "en": "Target",
+   "default": ""
+  },
+  "link": {
+   "th": "ชื่อลิงก์",
+   "en": "Link name",
+   "default": ""
+  },
+  "name": {
+   "th": "ชื่อ",
+   "en": "Name",
+   "default": ""
+  },
+  "text": {
+   "th": "ข้อความ",
+   "en": "Text",
+   "default": ""
+  },
+  "old": {
+   "th": "ข้อความเดิม",
+   "en": "Old text",
+   "default": ""
+  },
+  "new": {
+   "th": "ข้อความใหม่",
+   "en": "New text",
+   "default": ""
+  },
+  "start": {
+   "th": "บรรทัดเริ่ม",
+   "en": "Start line",
+   "default": "1"
+  },
+  "end": {
+   "th": "บรรทัดสุดท้าย",
+   "en": "End line",
+   "default": "50"
+  },
+  "user": {
+   "th": "ชื่อผู้ใช้",
+   "en": "User name",
+   "default": "",
+   "source": "awk -F: '$3>=1000 && $3<65000 {print $1}' /etc/passwd"
+  },
+  "group": {
+   "th": "กลุ่ม",
+   "en": "Group",
+   "default": "",
+   "source": "cut -d: -f1 /etc/group"
+  },
+  "mode": {
+   "th": "สิทธิ์ (เช่น 644, 755, u+x)",
+   "en": "Mode (e.g. 644, 755, u+x)",
+   "default": "644"
+  },
+  "package": {
+   "th": "ชื่อแพ็กเกจ",
+   "en": "Package name",
+   "default": ""
+  },
+  "keyword": {
+   "th": "คำค้น",
+   "en": "Keyword",
+   "default": ""
+  },
+  "service": {
+   "th": "ชื่อบริการ (เช่น nginx, ssh)",
+   "en": "Service name (e.g. nginx, ssh)",
+   "default": "",
+   "source": "systemctl list-units --type=service --all --no-legend --plain | awk '{print $1}' | sed 's/[.]service$//'"
+  },
+  "pid": {
+   "th": "หมายเลขโปรเซส (PID)",
+   "en": "Process ID (PID)",
+   "default": ""
+  },
+  "host": {
+   "th": "โฮสต์หรือ IP",
+   "en": "Host or IP",
+   "default": ""
+  },
+  "port": {
+   "th": "พอร์ต",
+   "en": "Port",
+   "default": ""
+  },
+  "url": {
+   "th": "URL",
+   "en": "URL",
+   "default": "https://"
+  },
+  "domain": {
+   "th": "โดเมน",
+   "en": "Domain",
+   "default": ""
+  },
+  "ip": {
+   "th": "IP",
+   "en": "IP address",
+   "default": ""
+  },
+  "number": {
+   "th": "หมายเลขกฎ",
+   "en": "Rule number",
+   "default": ""
+  },
+  "comment": {
+   "th": "หมายเหตุ (เช่นอีเมล)",
+   "en": "Comment (e.g. email)",
+   "default": ""
+  },
+  "since": {
+   "th": "ตั้งแต่เมื่อไร",
+   "en": "Since",
+   "default": "1 hour ago"
+  },
+  "device": {
+   "th": "อุปกรณ์ (เช่น /dev/sdb1)",
+   "en": "Device (e.g. /dev/sdb1)",
+   "default": "/dev/"
+  },
+  "schedule": {
+   "th": "เวลาแบบ cron (นาที ชั่วโมง วัน เดือน วันในสัปดาห์)",
+   "en": "Cron schedule (min hour day month weekday)",
+   "default": "0 2 * * *"
+  },
+  "command": {
+   "th": "คำสั่ง",
+   "en": "Command",
+   "default": ""
+  },
+  "database": {
+   "th": "ชื่อฐานข้อมูล",
+   "en": "Database name",
+   "default": "",
+   "source": "sudo mysql -N -e 'SHOW DATABASES'"
+  },
+  "container": {
+   "th": "ชื่อคอนเทนเนอร์",
+   "en": "Container name",
+   "default": "",
+   "source": "docker ps -a --format '{{.Names}}'"
+  }
+ },
+ "commands": [
+  {
+   "id": "sys.os",
+   "cat": "system",
+   "name": {
+    "th": "ดูเวอร์ชัน Ubuntu",
+    "en": "Show Ubuntu version"
+   },
+   "template": "lsb_release -a",
+   "risk": "low"
+  },
+  {
+   "id": "sys.host",
+   "cat": "system",
+   "name": {
+    "th": "ดูข้อมูลเครื่องและชื่อโฮสต์",
+    "en": "Show host information"
+   },
+   "template": "hostnamectl",
+   "risk": "low"
+  },
+  {
+   "id": "sys.kernel",
+   "cat": "system",
+   "name": {
+    "th": "ดูเวอร์ชันเคอร์เนล",
+    "en": "Show kernel version"
+   },
+   "template": "uname -a",
+   "risk": "low"
+  },
+  {
+   "id": "sys.uptime",
+   "cat": "system",
+   "name": {
+    "th": "ดูเวลาที่เครื่องเปิดมาและโหลด",
+    "en": "Show uptime and load"
+   },
+   "template": "uptime",
+   "risk": "low"
+  },
+  {
+   "id": "sys.whoami",
+   "cat": "system",
+   "name": {
+    "th": "ดูชื่อผู้ใช้ปัจจุบัน",
+    "en": "Show current user"
+   },
+   "template": "whoami",
+   "risk": "low"
+  },
+  {
+   "id": "sys.date",
+   "cat": "system",
+   "name": {
+    "th": "ดูวันเวลาและเขตเวลา",
+    "en": "Show date, time and timezone"
+   },
+   "template": "timedatectl",
+   "risk": "low"
+  },
+  {
+   "id": "sys.settz",
+   "cat": "system",
+   "name": {
+    "th": "ตั้งเขตเวลาเป็นกรุงเทพ",
+    "en": "Set timezone to Bangkok"
+   },
+   "template": "sudo timedatectl set-timezone Asia/Bangkok",
+   "risk": "medium"
+  },
+  {
+   "id": "sys.cpu",
+   "cat": "system",
+   "name": {
+    "th": "ดูข้อมูล CPU",
+    "en": "Show CPU information"
+   },
+   "template": "lscpu",
+   "risk": "low"
+  },
+  {
+   "id": "sys.env",
+   "cat": "system",
+   "name": {
+    "th": "ดูตัวแปรสภาพแวดล้อม",
+    "en": "Show environment variables"
+   },
+   "template": "printenv | sort",
+   "risk": "low"
+  },
+  {
+   "id": "sys.history",
+   "cat": "system",
+   "name": {
+    "th": "ดูประวัติคำสั่ง 30 รายการล่าสุด",
+    "en": "Show last 30 commands"
+   },
+   "template": "history 30",
+   "risk": "low"
+  },
+  {
+   "id": "sys.lastboot",
+   "cat": "system",
+   "name": {
+    "th": "ดูประวัติการรีบูต",
+    "en": "Show reboot history"
+   },
+   "template": "last reboot | head -n 10",
+   "risk": "low"
+  },
+  {
+   "id": "sys.nopager",
+   "cat": "system",
+   "name": {
+    "th": "ปิด pager ของ systemd และ git ในเซสชันนี้ (อ่านง่ายขึ้น)",
+    "en": "Disable systemd and git pagers for this session"
+   },
+   "template": "export SYSTEMD_PAGER= GIT_PAGER=cat",
+   "risk": "low"
+  },
+  {
+   "id": "sys.nocolor",
+   "cat": "system",
+   "name": {
+    "th": "ปิดสีในผลลัพธ์ (อ่านง่ายขึ้น)",
+    "en": "Disable colored output for this session"
+   },
+   "template": "export NO_COLOR=1; alias ls='ls --color=never'; alias grep='grep --color=never'",
+   "risk": "low"
+  },
+  {
+   "id": "sys.reboot",
+   "cat": "system",
+   "name": {
+    "th": "รีสตาร์ทเครื่อง",
+    "en": "Reboot server"
+   },
+   "template": "sudo reboot",
+   "risk": "high"
+  },
+  {
+   "id": "sys.shutdown",
+   "cat": "system",
+   "name": {
+    "th": "ปิดเครื่อง",
+    "en": "Shut down server"
+   },
+   "template": "sudo shutdown -h now",
+   "risk": "high"
+  },
+  {
+   "id": "f.pwd",
+   "cat": "files",
+   "name": {
+    "th": "ดูโฟลเดอร์ปัจจุบัน",
+    "en": "Show current folder"
+   },
+   "template": "pwd",
+   "risk": "low"
+  },
+  {
+   "id": "f.ls",
+   "cat": "files",
+   "name": {
+    "th": "แสดงไฟล์ทั้งหมดแบบละเอียด",
+    "en": "List all files with details"
+   },
+   "template": "ls -lah",
+   "risk": "low"
+  },
+  {
+   "id": "f.ls1",
+   "cat": "files",
+   "name": {
+    "th": "แสดงชื่อไฟล์บรรทัดละไฟล์ (อ่านง่าย)",
+    "en": "List one file per line"
+   },
+   "template": "ls -1",
+   "risk": "low"
+  },
+  {
+   "id": "f.cd",
+   "cat": "files",
+   "name": {
+    "th": "เข้าโฟลเดอร์",
+    "en": "Change folder"
+   },
+   "template": "cd {path}",
+   "risk": "low"
+  },
+  {
+   "id": "f.cdhome",
+   "cat": "files",
+   "name": {
+    "th": "กลับโฟลเดอร์บ้าน",
+    "en": "Go to home folder"
+   },
+   "template": "cd ~",
+   "risk": "low"
+  },
+  {
+   "id": "f.cdup",
+   "cat": "files",
+   "name": {
+    "th": "ขึ้นไปหนึ่งระดับ",
+    "en": "Go up one folder"
+   },
+   "template": "cd ..",
+   "risk": "low"
+  },
+  {
+   "id": "f.mkdir",
+   "cat": "files",
+   "name": {
+    "th": "สร้างโฟลเดอร์ (รวมโฟลเดอร์แม่)",
+    "en": "Create folder (with parents)"
+   },
+   "template": "mkdir -p {path}",
+   "risk": "medium"
+  },
+  {
+   "id": "f.touch",
+   "cat": "files",
+   "name": {
+    "th": "สร้างไฟล์ว่าง",
+    "en": "Create empty file"
+   },
+   "template": "touch {file}",
+   "risk": "low"
+  },
+  {
+   "id": "f.cp",
+   "cat": "files",
+   "name": {
+    "th": "คัดลอกไฟล์หรือโฟลเดอร์",
+    "en": "Copy file or folder"
+   },
+   "template": "cp -r {source} {dest}",
+   "risk": "medium"
+  },
+  {
+   "id": "f.mv",
+   "cat": "files",
+   "name": {
+    "th": "ย้ายหรือเปลี่ยนชื่อ",
+    "en": "Move or rename"
+   },
+   "template": "mv {source} {dest}",
+   "risk": "medium"
+  },
+  {
+   "id": "f.ln",
+   "cat": "files",
+   "name": {
+    "th": "สร้างลิงก์สัญลักษณ์",
+    "en": "Create symbolic link"
+   },
+   "template": "ln -s {target} {link}",
+   "risk": "medium"
+  },
+  {
+   "id": "f.find",
+   "cat": "files",
+   "name": {
+    "th": "ค้นหาไฟล์ตามชื่อ",
+    "en": "Find files by name"
+   },
+   "template": "find {path} -iname '*{name}*' 2>/dev/null",
+   "risk": "low"
+  },
+  {
+   "id": "f.findbig",
+   "cat": "files",
+   "name": {
+    "th": "ค้นหาไฟล์ใหญ่กว่า 100MB",
+    "en": "Find files larger than 100MB"
+   },
+   "template": "sudo find / -xdev -type f -size +100M 2>/dev/null",
+   "risk": "low"
+  },
+  {
+   "id": "f.stat",
+   "cat": "files",
+   "name": {
+    "th": "ดูรายละเอียดไฟล์",
+    "en": "Show file details"
+   },
+   "template": "stat {file}",
+   "risk": "low"
+  },
+  {
+   "id": "f.count",
+   "cat": "files",
+   "name": {
+    "th": "นับจำนวนไฟล์ในโฟลเดอร์",
+    "en": "Count files in folder"
+   },
+   "template": "ls -1 {path} | wc -l",
+   "risk": "low"
+  },
+  {
+   "id": "f.rm",
+   "cat": "files",
+   "name": {
+    "th": "ลบไฟล์",
+    "en": "Delete file"
+   },
+   "template": "rm {file}",
+   "risk": "high"
+  },
+  {
+   "id": "f.rmdir",
+   "cat": "files",
+   "name": {
+    "th": "ลบโฟลเดอร์และทุกอย่างข้างใน",
+    "en": "Delete folder and its contents"
+   },
+   "template": "rm -r {path}",
+   "risk": "high"
+  },
+  {
+   "id": "v.cat",
+   "cat": "view",
+   "name": {
+    "th": "แสดงเนื้อหาไฟล์",
+    "en": "Show file contents"
+   },
+   "template": "cat {file}",
+   "risk": "low"
+  },
+  {
+   "id": "v.catn",
+   "cat": "view",
+   "name": {
+    "th": "แสดงเนื้อหาพร้อมเลขบรรทัด",
+    "en": "Show contents with line numbers"
+   },
+   "template": "cat -n {file}",
+   "risk": "low"
+  },
+  {
+   "id": "v.head",
+   "cat": "view",
+   "name": {
+    "th": "ดู 20 บรรทัดแรก",
+    "en": "Show first 20 lines"
+   },
+   "template": "head -n 20 {file}",
+   "risk": "low"
+  },
+  {
+   "id": "v.tail",
+   "cat": "view",
+   "name": {
+    "th": "ดู 20 บรรทัดสุดท้าย",
+    "en": "Show last 20 lines"
+   },
+   "template": "tail -n 20 {file}",
+   "risk": "low"
+  },
+  {
+   "id": "v.tailf",
+   "cat": "view",
+   "name": {
+    "th": "ติดตามไฟล์ต่อเนื่อง (Ctrl+C เพื่อหยุด)",
+    "en": "Follow file (Ctrl+C to stop)"
+   },
+   "template": "tail -f {file}",
+   "risk": "low"
+  },
+  {
+   "id": "v.range",
+   "cat": "view",
+   "name": {
+    "th": "ดูบรรทัดในช่วงที่กำหนด",
+    "en": "Show a range of lines"
+   },
+   "template": "sed -n '{start},{end}p' {file}",
+   "risk": "low"
+  },
+  {
+   "id": "v.wc",
+   "cat": "view",
+   "name": {
+    "th": "นับจำนวนบรรทัด",
+    "en": "Count lines"
+   },
+   "template": "wc -l {file}",
+   "risk": "low"
+  },
+  {
+   "id": "v.grep",
+   "cat": "view",
+   "name": {
+    "th": "ค้นหาข้อความในไฟล์ พร้อมเลขบรรทัด",
+    "en": "Search text in file with line numbers"
+   },
+   "template": "grep -n '{text}' {file}",
+   "risk": "low"
+  },
+  {
+   "id": "v.grepr",
+   "cat": "view",
+   "name": {
+    "th": "ค้นหาข้อความในทุกไฟล์ของโฟลเดอร์",
+    "en": "Search text in all files of a folder"
+   },
+   "template": "grep -rn '{text}' {path}",
+   "risk": "low"
+  },
+  {
+   "id": "v.diff",
+   "cat": "view",
+   "name": {
+    "th": "เปรียบเทียบสองไฟล์",
+    "en": "Compare two files"
+   },
+   "template": "diff {file1} {file2}",
+   "risk": "low"
+  },
+  {
+   "id": "v.less",
+   "cat": "view",
+   "name": {
+    "th": "อ่านไฟล์ทีละหน้า (q เพื่อออก)",
+    "en": "Page through file (q to quit)"
+   },
+   "template": "less {file}",
+   "risk": "low",
+   "sr": false
+  },
+  {
+   "id": "e.nano",
+   "cat": "edit",
+   "name": {
+    "th": "แก้ไขไฟล์ด้วย nano",
+    "en": "Edit file with nano"
+   },
+   "template": "nano {file}",
+   "risk": "low"
+  },
+  {
+   "id": "e.sudonano",
+   "cat": "edit",
+   "name": {
+    "th": "แก้ไขไฟล์ระบบด้วย nano (sudo)",
+    "en": "Edit system file with nano (sudo)"
+   },
+   "template": "sudo nano {file}",
+   "risk": "medium"
+  },
+  {
+   "id": "e.vim",
+   "cat": "edit",
+   "name": {
+    "th": "แก้ไขไฟล์ด้วย vim",
+    "en": "Edit file with vim"
+   },
+   "template": "vim {file}",
+   "risk": "low",
+   "sr": false
+  },
+  {
+   "id": "e.backup",
+   "cat": "edit",
+   "name": {
+    "th": "สำรองไฟล์ก่อนแก้ไข (ต่อท้ายวันเวลา)",
+    "en": "Back up file before editing (timestamped)"
+   },
+   "template": "cp {file} {file}.bak.$(date +%Y%m%d%H%M)",
+   "risk": "low"
+  },
+  {
+   "id": "e.append",
+   "cat": "edit",
+   "name": {
+    "th": "ต่อท้ายข้อความลงไฟล์",
+    "en": "Append text to file"
+   },
+   "template": "echo '{text}' >> {file}",
+   "risk": "medium"
+  },
+  {
+   "id": "e.teesudo",
+   "cat": "edit",
+   "name": {
+    "th": "ต่อท้ายข้อความลงไฟล์ระบบ (sudo)",
+    "en": "Append text to system file (sudo)"
+   },
+   "template": "echo '{text}' | sudo tee -a {file}",
+   "risk": "medium"
+  },
+  {
+   "id": "e.replace",
+   "cat": "edit",
+   "name": {
+    "th": "แทนที่ข้อความในไฟล์ (เก็บไฟล์เดิมเป็น .bak)",
+    "en": "Replace text in file (keeps .bak)"
+   },
+   "template": "sed -i.bak 's/{old}/{new}/g' {file}",
+   "risk": "medium"
+  },
+  {
+   "id": "u.id",
+   "cat": "users",
+   "name": {
+    "th": "ดูกลุ่มและสิทธิ์ของผู้ใช้",
+    "en": "Show user groups and IDs"
+   },
+   "template": "id {user}",
+   "risk": "low"
+  },
+  {
+   "id": "u.who",
+   "cat": "users",
+   "name": {
+    "th": "ดูผู้ที่ล็อกอินอยู่",
+    "en": "Show logged-in users"
+   },
+   "template": "who",
+   "risk": "low"
+  },
+  {
+   "id": "u.list",
+   "cat": "users",
+   "name": {
+    "th": "ดูรายชื่อผู้ใช้ทั้งหมด",
+    "en": "List all users"
+   },
+   "template": "cut -d: -f1 /etc/passwd",
+   "risk": "low"
+  },
+  {
+   "id": "u.add",
+   "cat": "users",
+   "name": {
+    "th": "เพิ่มผู้ใช้ใหม่",
+    "en": "Add new user"
+   },
+   "template": "sudo adduser {user}",
+   "risk": "medium"
+  },
+  {
+   "id": "u.sudo",
+   "cat": "users",
+   "name": {
+    "th": "ให้สิทธิ์ sudo",
+    "en": "Grant sudo rights"
+   },
+   "template": "sudo usermod -aG sudo {user}",
+   "risk": "medium"
+  },
+  {
+   "id": "u.group",
+   "cat": "users",
+   "name": {
+    "th": "เพิ่มผู้ใช้เข้ากลุ่ม",
+    "en": "Add user to group"
+   },
+   "template": "sudo usermod -aG {group} {user}",
+   "risk": "medium"
+  },
+  {
+   "id": "u.passwd",
+   "cat": "users",
+   "name": {
+    "th": "เปลี่ยนรหัสผ่านผู้ใช้",
+    "en": "Change user password"
+   },
+   "template": "sudo passwd {user}",
+   "risk": "medium"
+  },
+  {
+   "id": "u.chmod",
+   "cat": "users",
+   "name": {
+    "th": "เปลี่ยนสิทธิ์ไฟล์",
+    "en": "Change file mode"
+   },
+   "template": "chmod {mode} {file}",
+   "risk": "medium"
+  },
+  {
+   "id": "u.chown",
+   "cat": "users",
+   "name": {
+    "th": "เปลี่ยนเจ้าของทั้งโฟลเดอร์",
+    "en": "Change owner recursively"
+   },
+   "template": "sudo chown -R {user}:{group} {path}",
+   "risk": "medium"
+  },
+  {
+   "id": "u.root",
+   "cat": "users",
+   "name": {
+    "th": "สลับเป็น root",
+    "en": "Switch to root shell"
+   },
+   "template": "sudo -i",
+   "risk": "medium"
+  },
+  {
+   "id": "u.del",
+   "cat": "users",
+   "name": {
+    "th": "ลบผู้ใช้และโฟลเดอร์บ้าน",
+    "en": "Delete user and home folder"
+   },
+   "template": "sudo deluser --remove-home {user}",
+   "risk": "high"
+  },
+  {
+   "id": "p.update",
+   "cat": "packages",
+   "name": {
+    "th": "อัปเดตรายการแพ็กเกจ",
+    "en": "Update package lists"
+   },
+   "template": "sudo apt update",
+   "risk": "low"
+  },
+  {
+   "id": "p.upgradable",
+   "cat": "packages",
+   "name": {
+    "th": "ดูแพ็กเกจที่อัปเกรดได้",
+    "en": "List upgradable packages"
+   },
+   "template": "apt list --upgradable 2>/dev/null",
+   "risk": "low"
+  },
+  {
+   "id": "p.upgrade",
+   "cat": "packages",
+   "name": {
+    "th": "อัปเกรดแพ็กเกจทั้งหมด",
+    "en": "Upgrade all packages"
+   },
+   "template": "sudo apt upgrade -y",
+   "risk": "medium"
+  },
+  {
+   "id": "p.install",
+   "cat": "packages",
+   "name": {
+    "th": "ติดตั้งแพ็กเกจ",
+    "en": "Install package"
+   },
+   "template": "sudo apt install -y {package}",
+   "risk": "medium"
+  },
+  {
+   "id": "p.search",
+   "cat": "packages",
+   "name": {
+    "th": "ค้นหาแพ็กเกจ",
+    "en": "Search packages"
+   },
+   "template": "apt-cache search {keyword}",
+   "risk": "low"
+  },
+  {
+   "id": "p.show",
+   "cat": "packages",
+   "name": {
+    "th": "ดูรายละเอียดแพ็กเกจ",
+    "en": "Show package details"
+   },
+   "template": "apt show {package} 2>/dev/null",
+   "risk": "low"
+  },
+  {
+   "id": "p.installed",
+   "cat": "packages",
+   "name": {
+    "th": "ตรวจว่าติดตั้งแพ็กเกจแล้วหรือยัง",
+    "en": "Check if package is installed"
+   },
+   "template": "dpkg -l | grep -i {package}",
+   "risk": "low"
+  },
+  {
+   "id": "p.reboot",
+   "cat": "packages",
+   "name": {
+    "th": "ตรวจว่าต้องรีบูตหลังอัปเดตหรือไม่",
+    "en": "Check if reboot is required"
+   },
+   "template": "[ -f /var/run/reboot-required ] && echo 'Reboot required' || echo 'No reboot needed'",
+   "risk": "low"
+  },
+  {
+   "id": "p.snap",
+   "cat": "packages",
+   "name": {
+    "th": "ดูแพ็กเกจ snap",
+    "en": "List snap packages"
+   },
+   "template": "snap list",
+   "risk": "low"
+  },
+  {
+   "id": "p.autoremove",
+   "cat": "packages",
+   "name": {
+    "th": "ลบแพ็กเกจที่ไม่ใช้แล้ว",
+    "en": "Remove unused packages"
+   },
+   "template": "sudo apt autoremove -y",
+   "risk": "medium"
+  },
+  {
+   "id": "p.remove",
+   "cat": "packages",
+   "name": {
+    "th": "ถอนการติดตั้งแพ็กเกจ",
+    "en": "Remove package"
+   },
+   "template": "sudo apt remove {package}",
+   "risk": "high"
+  },
+  {
+   "id": "s.status",
+   "cat": "services",
+   "name": {
+    "th": "ดูสถานะบริการ",
+    "en": "Show service status"
+   },
+   "template": "systemctl status {service} --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "s.active",
+   "cat": "services",
+   "name": {
+    "th": "ตรวจว่าบริการทำงานอยู่หรือไม่ (ตอบสั้น)",
+    "en": "Is service active (short answer)"
+   },
+   "template": "systemctl is-active {service}",
+   "risk": "low"
+  },
+  {
+   "id": "s.running",
+   "cat": "services",
+   "name": {
+    "th": "แสดงบริการที่กำลังทำงาน",
+    "en": "List running services"
+   },
+   "template": "systemctl list-units --type=service --state=running --no-pager --plain",
+   "risk": "low"
+  },
+  {
+   "id": "s.failed",
+   "cat": "services",
+   "name": {
+    "th": "แสดงบริการที่ล้มเหลว",
+    "en": "List failed services"
+   },
+   "template": "systemctl --failed --no-pager --plain",
+   "risk": "low"
+  },
+  {
+   "id": "s.logs",
+   "cat": "services",
+   "name": {
+    "th": "ดู log ของบริการ 50 บรรทัดล่าสุด",
+    "en": "Show last 50 log lines of service"
+   },
+   "template": "journalctl -u {service} -n 50 --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "s.logsf",
+   "cat": "services",
+   "name": {
+    "th": "ติดตาม log ของบริการ (Ctrl+C เพื่อหยุด)",
+    "en": "Follow service log (Ctrl+C to stop)"
+   },
+   "template": "journalctl -u {service} -f",
+   "risk": "low"
+  },
+  {
+   "id": "s.start",
+   "cat": "services",
+   "name": {
+    "th": "เริ่มบริการ",
+    "en": "Start service"
+   },
+   "template": "sudo systemctl start {service}",
+   "risk": "medium"
+  },
+  {
+   "id": "s.restart",
+   "cat": "services",
+   "name": {
+    "th": "รีสตาร์ทบริการ",
+    "en": "Restart service"
+   },
+   "template": "sudo systemctl restart {service}",
+   "risk": "medium"
+  },
+  {
+   "id": "s.reload",
+   "cat": "services",
+   "name": {
+    "th": "โหลดค่าตั้งของบริการใหม่",
+    "en": "Reload service configuration"
+   },
+   "template": "sudo systemctl reload {service}",
+   "risk": "medium"
+  },
+  {
+   "id": "s.enable",
+   "cat": "services",
+   "name": {
+    "th": "เปิดให้เริ่มอัตโนมัติตอนบูต และเริ่มทันที",
+    "en": "Enable at boot and start now"
+   },
+   "template": "sudo systemctl enable --now {service}",
+   "risk": "medium"
+  },
+  {
+   "id": "s.disable",
+   "cat": "services",
+   "name": {
+    "th": "ปิดการเริ่มอัตโนมัติตอนบูต",
+    "en": "Disable at boot"
+   },
+   "template": "sudo systemctl disable {service}",
+   "risk": "medium"
+  },
+  {
+   "id": "s.stop",
+   "cat": "services",
+   "name": {
+    "th": "หยุดบริการ",
+    "en": "Stop service"
+   },
+   "template": "sudo systemctl stop {service}",
+   "risk": "high"
+  },
+  {
+   "id": "r.free",
+   "cat": "processes",
+   "name": {
+    "th": "ดูหน่วยความจำ",
+    "en": "Show memory usage"
+   },
+   "template": "free -h",
+   "risk": "low"
+  },
+  {
+   "id": "r.df",
+   "cat": "processes",
+   "name": {
+    "th": "ดูพื้นที่ดิสก์",
+    "en": "Show disk space"
+   },
+   "template": "df -h",
+   "risk": "low"
+  },
+  {
+   "id": "r.du",
+   "cat": "processes",
+   "name": {
+    "th": "ขนาดของแต่ละรายการในโฟลเดอร์ เรียงจากใหญ่",
+    "en": "Sizes in folder, largest first"
+   },
+   "template": "du -sh {path}/* 2>/dev/null | sort -rh | head -n 20",
+   "risk": "low"
+  },
+  {
+   "id": "r.topcpu",
+   "cat": "processes",
+   "name": {
+    "th": "10 โปรเซสที่ใช้ CPU มากที่สุด",
+    "en": "Top 10 processes by CPU"
+   },
+   "template": "ps aux --sort=-%cpu | head -n 11",
+   "risk": "low"
+  },
+  {
+   "id": "r.topmem",
+   "cat": "processes",
+   "name": {
+    "th": "10 โปรเซสที่ใช้หน่วยความจำมากที่สุด",
+    "en": "Top 10 processes by memory"
+   },
+   "template": "ps aux --sort=-%mem | head -n 11",
+   "risk": "low"
+  },
+  {
+   "id": "r.top1",
+   "cat": "processes",
+   "name": {
+    "th": "สรุปภาพรวมระบบครั้งเดียว (ไม่เต็มจอ)",
+    "en": "One-shot system overview (not full screen)"
+   },
+   "template": "top -b -n 1 | head -n 20",
+   "risk": "low"
+  },
+  {
+   "id": "r.load",
+   "cat": "processes",
+   "name": {
+    "th": "ดูโหลดเฉลี่ยและจำนวน CPU",
+    "en": "Show load average and CPU count"
+   },
+   "template": "cat /proc/loadavg; nproc",
+   "risk": "low"
+  },
+  {
+   "id": "r.find",
+   "cat": "processes",
+   "name": {
+    "th": "ค้นหาโปรเซสตามชื่อ",
+    "en": "Find process by name"
+   },
+   "template": "pgrep -a {name}",
+   "risk": "low"
+  },
+  {
+   "id": "r.htop",
+   "cat": "processes",
+   "name": {
+    "th": "ดูโปรเซสแบบโต้ตอบ (เต็มจอ)",
+    "en": "Interactive process viewer (full screen)"
+   },
+   "template": "htop",
+   "risk": "low",
+   "sr": false
+  },
+  {
+   "id": "r.kill",
+   "cat": "processes",
+   "name": {
+    "th": "หยุดโปรเซสตาม PID",
+    "en": "Stop process by PID"
+   },
+   "template": "kill {pid}",
+   "risk": "high"
+  },
+  {
+   "id": "r.kill9",
+   "cat": "processes",
+   "name": {
+    "th": "บังคับหยุดโปรเซสตาม PID",
+    "en": "Force stop process by PID"
+   },
+   "template": "kill -9 {pid}",
+   "risk": "high"
+  },
+  {
+   "id": "r.pkill",
+   "cat": "processes",
+   "name": {
+    "th": "หยุดโปรเซสตามชื่อ",
+    "en": "Stop processes by name"
+   },
+   "template": "pkill {name}",
+   "risk": "high"
+  },
+  {
+   "id": "n.ip",
+   "cat": "network",
+   "name": {
+    "th": "ดู IP แบบย่อ",
+    "en": "Show IP addresses (brief)"
+   },
+   "template": "ip -br a",
+   "risk": "low"
+  },
+  {
+   "id": "n.route",
+   "cat": "network",
+   "name": {
+    "th": "ดูเส้นทางเครือข่าย",
+    "en": "Show routes"
+   },
+   "template": "ip r",
+   "risk": "low"
+  },
+  {
+   "id": "n.ping",
+   "cat": "network",
+   "name": {
+    "th": "ทดสอบการเชื่อมต่อ 4 ครั้ง",
+    "en": "Ping 4 times"
+   },
+   "template": "ping -c 4 {host}",
+   "risk": "low"
+  },
+  {
+   "id": "n.ports",
+   "cat": "network",
+   "name": {
+    "th": "ดูพอร์ตที่เปิดรอการเชื่อมต่อ",
+    "en": "Show listening ports"
+   },
+   "template": "sudo ss -tulpn",
+   "risk": "low"
+  },
+  {
+   "id": "n.port",
+   "cat": "network",
+   "name": {
+    "th": "ตรวจว่าพอร์ตถูกใช้โดยโปรแกรมใด",
+    "en": "Which program uses a port"
+   },
+   "template": "sudo ss -tulpn | grep ':{port} '",
+   "risk": "low"
+  },
+  {
+   "id": "n.curl",
+   "cat": "network",
+   "name": {
+    "th": "ตรวจ HTTP header ของเว็บ",
+    "en": "Show HTTP headers"
+   },
+   "template": "curl -I {url}",
+   "risk": "low"
+  },
+  {
+   "id": "n.publicip",
+   "cat": "network",
+   "name": {
+    "th": "ดู IP สาธารณะ",
+    "en": "Show public IP"
+   },
+   "template": "curl -s https://ifconfig.me; echo",
+   "risk": "low"
+  },
+  {
+   "id": "n.dns",
+   "cat": "network",
+   "name": {
+    "th": "ค้นหา DNS",
+    "en": "DNS lookup"
+   },
+   "template": "dig +short {domain}",
+   "risk": "low"
+  },
+  {
+   "id": "n.trace",
+   "cat": "network",
+   "name": {
+    "th": "ตรวจเส้นทางไปยังปลายทาง",
+    "en": "Trace route"
+   },
+   "template": "traceroute {host}",
+   "risk": "low"
+  },
+  {
+   "id": "n.download",
+   "cat": "network",
+   "name": {
+    "th": "ดาวน์โหลดไฟล์",
+    "en": "Download file"
+   },
+   "template": "wget {url}",
+   "risk": "low"
+  },
+  {
+   "id": "n.netplan",
+   "cat": "network",
+   "name": {
+    "th": "ดูค่าตั้ง netplan",
+    "en": "Show netplan config"
+   },
+   "template": "cat /etc/netplan/*.yaml",
+   "risk": "low"
+  },
+  {
+   "id": "n.hostname",
+   "cat": "network",
+   "name": {
+    "th": "เปลี่ยนชื่อเครื่อง",
+    "en": "Change hostname"
+   },
+   "template": "sudo hostnamectl set-hostname {name}",
+   "risk": "medium"
+  },
+  {
+   "id": "n.netapply",
+   "cat": "network",
+   "name": {
+    "th": "ทดลองใช้ค่าตั้ง netplan (ย้อนกลับได้ใน 120 วินาที)",
+    "en": "Try netplan config (auto-revert in 120s)"
+   },
+   "template": "sudo netplan try",
+   "risk": "high"
+  },
+  {
+   "id": "x.ufw",
+   "cat": "security",
+   "name": {
+    "th": "ดูสถานะไฟร์วอลล์",
+    "en": "Show firewall status"
+   },
+   "template": "sudo ufw status verbose",
+   "risk": "low"
+  },
+  {
+   "id": "x.ufwnum",
+   "cat": "security",
+   "name": {
+    "th": "ดูกฎไฟร์วอลล์แบบมีหมายเลข",
+    "en": "Show numbered firewall rules"
+   },
+   "template": "sudo ufw status numbered",
+   "risk": "low"
+  },
+  {
+   "id": "x.ufwssh",
+   "cat": "security",
+   "name": {
+    "th": "อนุญาต SSH (ทำก่อนเปิดไฟร์วอลล์)",
+    "en": "Allow SSH (do before enabling firewall)"
+   },
+   "template": "sudo ufw allow OpenSSH",
+   "risk": "medium"
+  },
+  {
+   "id": "x.ufwallow",
+   "cat": "security",
+   "name": {
+    "th": "เปิดพอร์ต TCP",
+    "en": "Allow TCP port"
+   },
+   "template": "sudo ufw allow {port}/tcp",
+   "risk": "medium"
+  },
+  {
+   "id": "x.ufwdel",
+   "cat": "security",
+   "name": {
+    "th": "ลบกฎไฟร์วอลล์ตามหมายเลข",
+    "en": "Delete firewall rule by number"
+   },
+   "template": "sudo ufw delete {number}",
+   "risk": "high"
+  },
+  {
+   "id": "x.ufwon",
+   "cat": "security",
+   "name": {
+    "th": "เปิดไฟร์วอลล์",
+    "en": "Enable firewall"
+   },
+   "template": "sudo ufw enable",
+   "risk": "high"
+  },
+  {
+   "id": "x.f2b",
+   "cat": "security",
+   "name": {
+    "th": "ดูสถานะ fail2ban",
+    "en": "Show fail2ban status"
+   },
+   "template": "sudo fail2ban-client status",
+   "risk": "low"
+  },
+  {
+   "id": "x.f2bssh",
+   "cat": "security",
+   "name": {
+    "th": "ดู IP ที่ถูกแบนจาก SSH",
+    "en": "Show IPs banned from SSH"
+   },
+   "template": "sudo fail2ban-client status sshd",
+   "risk": "low"
+  },
+  {
+   "id": "x.unban",
+   "cat": "security",
+   "name": {
+    "th": "ปลดแบน IP",
+    "en": "Unban IP"
+   },
+   "template": "sudo fail2ban-client set sshd unbanip {ip}",
+   "risk": "medium"
+  },
+  {
+   "id": "x.last",
+   "cat": "security",
+   "name": {
+    "th": "ดูประวัติการล็อกอิน",
+    "en": "Show login history"
+   },
+   "template": "last -n 20",
+   "risk": "low"
+  },
+  {
+   "id": "x.failed",
+   "cat": "security",
+   "name": {
+    "th": "ดูการล็อกอินที่ล้มเหลว",
+    "en": "Show failed logins"
+   },
+   "template": "sudo grep 'Failed password' /var/log/auth.log | tail -n 20",
+   "risk": "low"
+  },
+  {
+   "id": "x.sshtest",
+   "cat": "security",
+   "name": {
+    "th": "ตรวจไฟล์ตั้งค่า SSH",
+    "en": "Test SSH server config"
+   },
+   "template": "sudo sshd -t && echo OK",
+   "risk": "low"
+  },
+  {
+   "id": "x.keygen",
+   "cat": "security",
+   "name": {
+    "th": "สร้าง SSH key",
+    "en": "Generate SSH key"
+   },
+   "template": "ssh-keygen -t ed25519 -C '{comment}'",
+   "risk": "low"
+  },
+  {
+   "id": "l.syslog",
+   "cat": "logs",
+   "name": {
+    "th": "ดู syslog 50 บรรทัดล่าสุด",
+    "en": "Last 50 lines of syslog"
+   },
+   "template": "sudo tail -n 50 /var/log/syslog",
+   "risk": "low"
+  },
+  {
+   "id": "l.auth",
+   "cat": "logs",
+   "name": {
+    "th": "ดู auth.log 50 บรรทัดล่าสุด",
+    "en": "Last 50 lines of auth.log"
+   },
+   "template": "sudo tail -n 50 /var/log/auth.log",
+   "risk": "low"
+  },
+  {
+   "id": "l.dmesg",
+   "cat": "logs",
+   "name": {
+    "th": "ดูข้อความเคอร์เนลล่าสุด",
+    "en": "Recent kernel messages"
+   },
+   "template": "sudo dmesg | tail -n 30",
+   "risk": "low"
+  },
+  {
+   "id": "l.boot",
+   "cat": "logs",
+   "name": {
+    "th": "ดูข้อผิดพลาดตั้งแต่บูตครั้งนี้",
+    "en": "Errors since this boot"
+   },
+   "template": "journalctl -b -p err --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "l.xe",
+   "cat": "logs",
+   "name": {
+    "th": "ดู log ล่าสุดพร้อมคำอธิบาย",
+    "en": "Recent log with explanations"
+   },
+   "template": "journalctl -xe --no-pager | tail -n 50",
+   "risk": "low"
+  },
+  {
+   "id": "l.since",
+   "cat": "logs",
+   "name": {
+    "th": "ดู log ตั้งแต่เวลาที่กำหนด",
+    "en": "Log since a given time"
+   },
+   "template": "journalctl --since '{since}' --no-pager | tail -n 100",
+   "risk": "low"
+  },
+  {
+   "id": "l.size",
+   "cat": "logs",
+   "name": {
+    "th": "ดูพื้นที่ที่ log ใช้",
+    "en": "Show journal disk usage"
+   },
+   "template": "journalctl --disk-usage",
+   "risk": "low"
+  },
+  {
+   "id": "l.vacuum",
+   "cat": "logs",
+   "name": {
+    "th": "ลด log ให้เหลือ 7 วัน",
+    "en": "Keep only 7 days of logs"
+   },
+   "template": "sudo journalctl --vacuum-time=7d",
+   "risk": "medium"
+  },
+  {
+   "id": "a.tarc",
+   "cat": "archive",
+   "name": {
+    "th": "บีบอัดโฟลเดอร์เป็น .tar.gz",
+    "en": "Compress folder to .tar.gz"
+   },
+   "template": "tar -czf {name}.tar.gz {path}",
+   "risk": "low"
+  },
+  {
+   "id": "a.tarx",
+   "cat": "archive",
+   "name": {
+    "th": "แตกไฟล์ .tar.gz",
+    "en": "Extract .tar.gz"
+   },
+   "template": "tar -xzf {file}",
+   "risk": "low"
+  },
+  {
+   "id": "a.tarl",
+   "cat": "archive",
+   "name": {
+    "th": "ดูรายการไฟล์ใน .tar.gz",
+    "en": "List files in .tar.gz"
+   },
+   "template": "tar -tzf {file}",
+   "risk": "low"
+  },
+  {
+   "id": "a.zip",
+   "cat": "archive",
+   "name": {
+    "th": "บีบอัดเป็น zip",
+    "en": "Compress to zip"
+   },
+   "template": "zip -r {name}.zip {path}",
+   "risk": "low"
+  },
+  {
+   "id": "a.unzip",
+   "cat": "archive",
+   "name": {
+    "th": "แตกไฟล์ zip",
+    "en": "Extract zip"
+   },
+   "template": "unzip {file}",
+   "risk": "low"
+  },
+  {
+   "id": "a.backupdate",
+   "cat": "archive",
+   "name": {
+    "th": "สำรองโฟลเดอร์พร้อมวันที่",
+    "en": "Back up folder with date"
+   },
+   "template": "tar -czf ~/backup-$(date +%Y%m%d).tar.gz {path}",
+   "risk": "low"
+  },
+  {
+   "id": "a.scp",
+   "cat": "archive",
+   "name": {
+    "th": "ส่งไฟล์ไปเครื่องอื่น",
+    "en": "Copy file to another host"
+   },
+   "template": "scp {file} {user}@{host}:{dest}",
+   "risk": "low"
+  },
+  {
+   "id": "a.rsync",
+   "cat": "archive",
+   "name": {
+    "th": "ซิงก์โฟลเดอร์ไปเครื่องอื่น",
+    "en": "Sync folder to another host"
+   },
+   "template": "rsync -avz {source} {user}@{host}:{dest}",
+   "risk": "medium"
+  },
+  {
+   "id": "d.lsblk",
+   "cat": "disk",
+   "name": {
+    "th": "ดูดิสก์และพาร์ทิชัน",
+    "en": "Show disks and partitions"
+   },
+   "template": "lsblk -f",
+   "risk": "low"
+  },
+  {
+   "id": "d.blkid",
+   "cat": "disk",
+   "name": {
+    "th": "ดู UUID ของพาร์ทิชัน",
+    "en": "Show partition UUIDs"
+   },
+   "template": "sudo blkid",
+   "risk": "low"
+  },
+  {
+   "id": "d.mounts",
+   "cat": "disk",
+   "name": {
+    "th": "ดูสิ่งที่ mount อยู่",
+    "en": "Show mounted filesystems"
+   },
+   "template": "findmnt --real",
+   "risk": "low"
+  },
+  {
+   "id": "d.fdisk",
+   "cat": "disk",
+   "name": {
+    "th": "ดูตารางพาร์ทิชันทั้งหมด",
+    "en": "Show partition tables"
+   },
+   "template": "sudo fdisk -l",
+   "risk": "low"
+  },
+  {
+   "id": "d.inode",
+   "cat": "disk",
+   "name": {
+    "th": "ดู inode ที่ใช้",
+    "en": "Show inode usage"
+   },
+   "template": "df -i",
+   "risk": "low"
+  },
+  {
+   "id": "d.mount",
+   "cat": "disk",
+   "name": {
+    "th": "mount พาร์ทิชัน",
+    "en": "Mount partition"
+   },
+   "template": "sudo mount {device} {path}",
+   "risk": "medium"
+  },
+  {
+   "id": "d.umount",
+   "cat": "disk",
+   "name": {
+    "th": "ยกเลิก mount",
+    "en": "Unmount"
+   },
+   "template": "sudo umount {path}",
+   "risk": "medium"
+  },
+  {
+   "id": "c.list",
+   "cat": "schedule",
+   "name": {
+    "th": "ดูงานตั้งเวลาของฉัน",
+    "en": "List my cron jobs"
+   },
+   "template": "crontab -l",
+   "risk": "low"
+  },
+  {
+   "id": "c.root",
+   "cat": "schedule",
+   "name": {
+    "th": "ดูงานตั้งเวลาของ root",
+    "en": "List root cron jobs"
+   },
+   "template": "sudo crontab -l",
+   "risk": "low"
+  },
+  {
+   "id": "c.timers",
+   "cat": "schedule",
+   "name": {
+    "th": "ดู systemd timers",
+    "en": "List systemd timers"
+   },
+   "template": "systemctl list-timers --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "c.edit",
+   "cat": "schedule",
+   "name": {
+    "th": "แก้ไขงานตั้งเวลา",
+    "en": "Edit cron jobs"
+   },
+   "template": "crontab -e",
+   "risk": "low"
+  },
+  {
+   "id": "c.add",
+   "cat": "schedule",
+   "name": {
+    "th": "เพิ่มงานตั้งเวลา (ไม่ต้องเปิดตัวแก้ไข)",
+    "en": "Add cron job (no editor)"
+   },
+   "template": "(crontab -l 2>/dev/null; echo '{schedule} {command}') | crontab -",
+   "risk": "medium"
+  },
+  {
+   "id": "w.nginxt",
+   "cat": "webdb",
+   "name": {
+    "th": "ทดสอบค่าตั้ง Nginx",
+    "en": "Test Nginx configuration"
+   },
+   "template": "sudo nginx -t",
+   "risk": "low"
+  },
+  {
+   "id": "w.nginxr",
+   "cat": "webdb",
+   "name": {
+    "th": "โหลดค่าตั้ง Nginx ใหม่",
+    "en": "Reload Nginx"
+   },
+   "template": "sudo systemctl reload nginx",
+   "risk": "medium"
+  },
+  {
+   "id": "w.apachet",
+   "cat": "webdb",
+   "name": {
+    "th": "ทดสอบค่าตั้ง Apache",
+    "en": "Test Apache configuration"
+   },
+   "template": "sudo apache2ctl configtest",
+   "risk": "low"
+  },
+  {
+   "id": "w.mysql",
+   "cat": "webdb",
+   "name": {
+    "th": "เข้า MySQL/MariaDB ด้วย root",
+    "en": "Open MySQL/MariaDB as root"
+   },
+   "template": "sudo mysql",
+   "risk": "low"
+  },
+  {
+   "id": "w.mysqldump",
+   "cat": "webdb",
+   "name": {
+    "th": "สำรองฐานข้อมูล MySQL",
+    "en": "Back up MySQL database"
+   },
+   "template": "mysqldump -u {user} -p {database} > {database}-$(date +%Y%m%d).sql",
+   "risk": "low"
+  },
+  {
+   "id": "w.psql",
+   "cat": "webdb",
+   "name": {
+    "th": "เข้า PostgreSQL",
+    "en": "Open PostgreSQL"
+   },
+   "template": "sudo -u postgres psql",
+   "risk": "low"
+  },
+  {
+   "id": "w.dockerps",
+   "cat": "webdb",
+   "name": {
+    "th": "ดูคอนเทนเนอร์ที่ทำงานอยู่ (อ่านง่าย)",
+    "en": "Running containers (readable)"
+   },
+   "template": "docker ps --format '{{.Names}}: {{.Status}}'",
+   "risk": "low"
+  },
+  {
+   "id": "w.dockerlogs",
+   "cat": "webdb",
+   "name": {
+    "th": "ดู log คอนเทนเนอร์ 100 บรรทัด",
+    "en": "Last 100 container log lines"
+   },
+   "template": "docker logs --tail 100 {container}",
+   "risk": "low"
+  },
+  {
+   "id": "w.composeup",
+   "cat": "webdb",
+   "name": {
+    "th": "เริ่ม Docker Compose",
+    "en": "Start Docker Compose"
+   },
+   "template": "docker compose up -d",
+   "risk": "medium"
+  },
+  {
+   "id": "w.composedown",
+   "cat": "webdb",
+   "name": {
+    "th": "หยุด Docker Compose",
+    "en": "Stop Docker Compose"
+   },
+   "template": "docker compose down",
+   "risk": "high"
+  },
+  {
+   "id": "w.git",
+   "cat": "webdb",
+   "name": {
+    "th": "ดูสถานะ Git",
+    "en": "Git status"
+   },
+   "template": "git status",
+   "risk": "low"
+  },
+  {
+   "id": "w.gitpull",
+   "cat": "webdb",
+   "name": {
+    "th": "ดึงโค้ดล่าสุดจาก Git",
+    "en": "Git pull"
+   },
+   "template": "git pull",
+   "risk": "medium"
+  },
+  {
+   "id": "w.certbot",
+   "cat": "webdb",
+   "name": {
+    "th": "ดูใบรับรอง SSL",
+    "en": "List SSL certificates"
+   },
+   "template": "sudo certbot certificates",
+   "risk": "low"
+  }
+ ]
+}

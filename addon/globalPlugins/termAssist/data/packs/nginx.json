@@ -1,0 +1,360 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.nginx",
+   "name": {
+    "th": "Nginx",
+    "en": "Nginx"
+   },
+   "detect": "nginx",
+   "install": "nginx"
+  }
+ ],
+ "params": {
+  "site": {
+   "th": "ชื่อไซต์ (sites-available)",
+   "en": "Site name (sites-available)",
+   "default": "",
+   "source": "ls /etc/nginx/sites-available"
+  },
+  "confd": {
+   "th": "ไฟล์ใน conf.d",
+   "en": "File in conf.d",
+   "default": "",
+   "source": "ls /etc/nginx/conf.d"
+  }
+ },
+ "commands": [
+  {
+   "id": "nginx.ver",
+   "cat": "pack.nginx",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน Nginx",
+    "en": "Nginx version"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "nginx -v",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.status",
+   "cat": "pack.nginx",
+   "group": "status",
+   "name": {
+    "th": "ดูสถานะ Nginx",
+    "en": "Nginx status"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "systemctl status nginx --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.active",
+   "cat": "pack.nginx",
+   "group": "status",
+   "name": {
+    "th": "Nginx ทำงานอยู่หรือไม่",
+    "en": "Is Nginx active"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "systemctl is-active nginx",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.reload",
+   "cat": "pack.nginx",
+   "group": "control",
+   "name": {
+    "th": "โหลดค่าตั้งใหม่",
+    "en": "Reload"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo systemctl reload nginx",
+   "risk": "medium"
+  },
+  {
+   "id": "nginx.restart",
+   "cat": "pack.nginx",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ท",
+    "en": "Restart"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo systemctl restart nginx",
+   "risk": "medium"
+  },
+  {
+   "id": "nginx.stop",
+   "cat": "pack.nginx",
+   "group": "control",
+   "name": {
+    "th": "หยุด Nginx",
+    "en": "Stop Nginx"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo systemctl stop nginx",
+   "risk": "high"
+  },
+  {
+   "id": "nginx.error",
+   "cat": "pack.nginx",
+   "group": "logs",
+   "name": {
+    "th": "error log 50 บรรทัด",
+    "en": "Error log, 50 lines"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo tail -n 50 /var/log/nginx/error.log",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.access",
+   "cat": "pack.nginx",
+   "group": "logs",
+   "name": {
+    "th": "access log 50 บรรทัด",
+    "en": "Access log, 50 lines"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo tail -n 50 /var/log/nginx/access.log",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.errorf",
+   "cat": "pack.nginx",
+   "group": "logs",
+   "name": {
+    "th": "ติดตาม error log",
+    "en": "Follow error log"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo tail -f /var/log/nginx/error.log",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.t",
+   "cat": "pack.nginx",
+   "group": "test",
+   "name": {
+    "th": "ทดสอบค่าตั้ง",
+    "en": "Test configuration"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo nginx -t",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.treload",
+   "cat": "pack.nginx",
+   "group": "test",
+   "name": {
+    "th": "ทดสอบแล้วโหลดใหม่ถ้าผ่าน",
+    "en": "Test, then reload if OK"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo nginx -t && sudo systemctl reload nginx",
+   "risk": "medium"
+  },
+  {
+   "id": "nginx.sites",
+   "cat": "pack.nginx",
+   "group": "config",
+   "name": {
+    "th": "รายการไซต์ทั้งหมด",
+    "en": "Available sites"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "ls -1 /etc/nginx/sites-available",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.enabled",
+   "cat": "pack.nginx",
+   "group": "config",
+   "name": {
+    "th": "ไซต์ที่เปิดใช้",
+    "en": "Enabled sites"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "ls -1 /etc/nginx/sites-enabled",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.editsite",
+   "cat": "pack.nginx",
+   "group": "config",
+   "name": {
+    "th": "แก้ไขค่าตั้งไซต์",
+    "en": "Edit site config"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo nano /etc/nginx/sites-available/{site}",
+   "risk": "medium"
+  },
+  {
+   "id": "nginx.editmain",
+   "cat": "pack.nginx",
+   "group": "config",
+   "name": {
+    "th": "แก้ไข nginx.conf",
+    "en": "Edit nginx.conf"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo nano /etc/nginx/nginx.conf",
+   "risk": "medium"
+  },
+  {
+   "id": "nginx.where",
+   "cat": "pack.nginx",
+   "group": "config",
+   "name": {
+    "th": "ดูว่าค่าตั้งไซต์อยู่โฟลเดอร์ไหน (sites-available หรือ conf.d)",
+    "en": "Where site configs live (sites-available or conf.d)"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "grep -n 'include' /etc/nginx/nginx.conf; ls -1 /etc/nginx",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.confdlist",
+   "cat": "pack.nginx",
+   "group": "config",
+   "name": {
+    "th": "รายการไฟล์ใน conf.d",
+    "en": "Files in conf.d"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "ls -1 /etc/nginx/conf.d",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.editconfd",
+   "cat": "pack.nginx",
+   "group": "config",
+   "name": {
+    "th": "แก้ไขไฟล์ใน conf.d",
+    "en": "Edit file in conf.d"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo nano /etc/nginx/conf.d/{confd}",
+   "risk": "medium"
+  },
+  {
+   "id": "nginx.ensite",
+   "cat": "pack.nginx",
+   "group": "tasks",
+   "name": {
+    "th": "เปิดใช้ไซต์",
+    "en": "Enable site"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo ln -s /etc/nginx/sites-available/{site} /etc/nginx/sites-enabled/",
+   "risk": "medium"
+  },
+  {
+   "id": "nginx.dissite",
+   "cat": "pack.nginx",
+   "group": "tasks",
+   "name": {
+    "th": "ปิดใช้ไซต์",
+    "en": "Disable site"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo rm /etc/nginx/sites-enabled/{site}",
+   "risk": "high"
+  },
+  {
+   "id": "nginx.ports",
+   "cat": "pack.nginx",
+   "group": "fix",
+   "name": {
+    "th": "ตรวจว่าพอร์ต 80/443 ถูกใช้โดยอะไร",
+    "en": "What uses ports 80/443"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "sudo ss -tlpn | grep -E ':(80|443) '",
+   "risk": "low"
+  },
+  {
+   "id": "nginx.local",
+   "cat": "pack.nginx",
+   "group": "fix",
+   "name": {
+    "th": "ทดสอบเรียกเว็บจากเครื่องเอง",
+    "en": "Request localhost"
+   },
+   "keywords": [
+    "nginx",
+    "nginx"
+   ],
+   "template": "curl -sI http://localhost | head -n 5",
+   "risk": "low"
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.fail2ban",
+   "name": {
+    "th": "Fail2ban",
+    "en": "Fail2ban"
+   },
+   "detect": "fail2ban-client",
+   "install": "fail2ban"
+  }
+ ],
+ "params": {
+  "jail": {
+   "th": "ชื่อ jail",
+   "en": "Jail name",
+   "default": "sshd",
+   "source": "sudo fail2ban-client status | sed -n 's/.*Jail list:[[:space:]]*//p' | tr ',' '\\n'"
+  }
+ },
+ "commands": [
+  {
+   "id": "fail2ban.status",
+   "cat": "pack.fail2ban",
+   "group": "status",
+   "name": {
+    "th": "รายการ jail",
+    "en": "List jails"
+   },
+   "keywords": [
+    "fail2ban",
+    "fail2ban"
+   ],
+   "template": "sudo fail2ban-client status",
+   "risk": "low"
+  },
+  {
+   "id": "fail2ban.jail",
+   "cat": "pack.fail2ban",
+   "group": "status",
+   "name": {
+    "th": "IP ที่ถูกแบนใน jail",
+    "en": "Banned IPs in jail"
+   },
+   "keywords": [
+    "fail2ban",
+    "fail2ban"
+   ],
+   "template": "sudo fail2ban-client status {jail}",
+   "risk": "low"
+  },
+  {
+   "id": "fail2ban.restart",
+   "cat": "pack.fail2ban",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ท fail2ban",
+    "en": "Restart fail2ban"
+   },
+   "keywords": [
+    "fail2ban",
+    "fail2ban"
+   ],
+   "template": "sudo systemctl restart fail2ban",
+   "risk": "medium"
+  },
+  {
+   "id": "fail2ban.log",
+   "cat": "pack.fail2ban",
+   "group": "logs",
+   "name": {
+    "th": "log 50 บรรทัด",
+    "en": "Log, 50 lines"
+   },
+   "keywords": [
+    "fail2ban",
+    "fail2ban"
+   ],
+   "template": "sudo tail -n 50 /var/log/fail2ban.log",
+   "risk": "low"
+  },
+  {
+   "id": "fail2ban.t",
+   "cat": "pack.fail2ban",
+   "group": "test",
+   "name": {
+    "th": "ทดสอบค่าตั้ง",
+    "en": "Test configuration"
+   },
+   "keywords": [
+    "fail2ban",
+    "fail2ban"
+   ],
+   "template": "sudo fail2ban-client -t",
+   "risk": "low"
+  },
+  {
+   "id": "fail2ban.edit",
+   "cat": "pack.fail2ban",
+   "group": "config",
+   "name": {
+    "th": "แก้ไข jail.local",
+    "en": "Edit jail.local"
+   },
+   "keywords": [
+    "fail2ban",
+    "fail2ban"
+   ],
+   "template": "sudo nano /etc/fail2ban/jail.local",
+   "risk": "medium"
+  },
+  {
+   "id": "fail2ban.unban",
+   "cat": "pack.fail2ban",
+   "group": "tasks",
+   "name": {
+    "th": "ปลดแบน IP",
+    "en": "Unban IP"
+   },
+   "keywords": [
+    "fail2ban",
+    "fail2ban"
+   ],
+   "template": "sudo fail2ban-client set {jail} unbanip {ip}",
+   "risk": "medium"
+  },
+  {
+   "id": "fail2ban.ban",
+   "cat": "pack.fail2ban",
+   "group": "tasks",
+   "name": {
+    "th": "แบน IP",
+    "en": "Ban IP"
+   },
+   "keywords": [
+    "fail2ban",
+    "fail2ban"
+   ],
+   "template": "sudo fail2ban-client set {jail} banip {ip}",
+   "risk": "medium"
+  }
+ ]
+}

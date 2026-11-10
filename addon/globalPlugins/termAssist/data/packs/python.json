@@ -1,0 +1,167 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.python",
+   "name": {
+    "th": "Python / venv",
+    "en": "Python / venv"
+   },
+   "detect": "python3",
+   "install": "python3-venv python3-pip"
+  }
+ ],
+ "params": {},
+ "commands": [
+  {
+   "id": "python.ver",
+   "cat": "pack.python",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน Python และ pip",
+    "en": "Python and pip versions"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "python3 --version; python3 -m pip --version",
+   "risk": "low"
+  },
+  {
+   "id": "python.venv",
+   "cat": "pack.python",
+   "group": "tasks",
+   "name": {
+    "th": "สร้าง virtual environment (.venv)",
+    "en": "Create .venv"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "python3 -m venv .venv",
+   "risk": "medium"
+  },
+  {
+   "id": "python.activate",
+   "cat": "pack.python",
+   "group": "tasks",
+   "name": {
+    "th": "เปิดใช้ .venv",
+    "en": "Activate .venv"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "source .venv/bin/activate",
+   "risk": "low"
+  },
+  {
+   "id": "python.deactivate",
+   "cat": "pack.python",
+   "group": "tasks",
+   "name": {
+    "th": "ออกจาก venv",
+    "en": "Deactivate venv"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "deactivate",
+   "risk": "low"
+  },
+  {
+   "id": "python.req",
+   "cat": "pack.python",
+   "group": "tasks",
+   "name": {
+    "th": "ติดตั้งจาก requirements.txt",
+    "en": "Install requirements.txt"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "pip install -r requirements.txt",
+   "risk": "medium"
+  },
+  {
+   "id": "python.install",
+   "cat": "pack.python",
+   "group": "tasks",
+   "name": {
+    "th": "ติดตั้งแพ็กเกจ pip",
+    "en": "pip install package"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "pip install {package}",
+   "risk": "medium"
+  },
+  {
+   "id": "python.list",
+   "cat": "pack.python",
+   "group": "tasks",
+   "name": {
+    "th": "แพ็กเกจที่ติดตั้ง",
+    "en": "Installed packages"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "pip list",
+   "risk": "low"
+  },
+  {
+   "id": "python.freeze",
+   "cat": "pack.python",
+   "group": "tasks",
+   "name": {
+    "th": "บันทึกรายการแพ็กเกจลง requirements.txt",
+    "en": "Freeze to requirements.txt"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "pip freeze > requirements.txt",
+   "risk": "medium"
+  },
+  {
+   "id": "python.serve",
+   "cat": "pack.python",
+   "group": "tasks",
+   "name": {
+    "th": "เปิดเว็บเซิร์ฟเวอร์ชั่วคราวในโฟลเดอร์นี้",
+    "en": "Quick web server here"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "python3 -m http.server {port}",
+   "risk": "low"
+  },
+  {
+   "id": "python.which",
+   "cat": "pack.python",
+   "group": "fix",
+   "name": {
+    "th": "ดูว่าใช้ Python ตัวไหน",
+    "en": "Which Python is used"
+   },
+   "keywords": [
+    "python",
+    "python / venv"
+   ],
+   "template": "which python3; python3 -c 'import sys; print(sys.prefix)'",
+   "risk": "low"
+  }
+ ]
+}

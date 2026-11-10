@@ -1,0 +1,152 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.samba",
+   "name": {
+    "th": "Samba (แชร์ไฟล์)",
+    "en": "Samba (file sharing)"
+   },
+   "detect": "smbd",
+   "install": "samba"
+  }
+ ],
+ "params": {},
+ "commands": [
+  {
+   "id": "samba.ver",
+   "cat": "pack.samba",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน",
+    "en": "Version"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "smbd --version",
+   "risk": "low"
+  },
+  {
+   "id": "samba.status",
+   "cat": "pack.samba",
+   "group": "status",
+   "name": {
+    "th": "ดูสถานะบริการ",
+    "en": "Service status"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "systemctl status smbd --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "samba.shares",
+   "cat": "pack.samba",
+   "group": "status",
+   "name": {
+    "th": "รายการแชร์บนเครื่องนี้",
+    "en": "Shares on this host"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "smbclient -L localhost -N",
+   "risk": "low"
+  },
+  {
+   "id": "samba.restart",
+   "cat": "pack.samba",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ท",
+    "en": "Restart"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "sudo systemctl restart smbd",
+   "risk": "medium"
+  },
+  {
+   "id": "samba.log",
+   "cat": "pack.samba",
+   "group": "logs",
+   "name": {
+    "th": "log 50 บรรทัด",
+    "en": "Log, 50 lines"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "sudo tail -n 50 /var/log/samba/log.smbd",
+   "risk": "low"
+  },
+  {
+   "id": "samba.t",
+   "cat": "pack.samba",
+   "group": "test",
+   "name": {
+    "th": "ทดสอบค่าตั้ง",
+    "en": "Test configuration"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "testparm -s",
+   "risk": "low"
+  },
+  {
+   "id": "samba.edit",
+   "cat": "pack.samba",
+   "group": "config",
+   "name": {
+    "th": "แก้ไข smb.conf",
+    "en": "Edit smb.conf"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "sudo nano /etc/samba/smb.conf",
+   "risk": "medium"
+  },
+  {
+   "id": "samba.users",
+   "cat": "pack.samba",
+   "group": "tasks",
+   "name": {
+    "th": "รายการผู้ใช้ Samba",
+    "en": "Samba users"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "sudo pdbedit -L",
+   "risk": "low"
+  },
+  {
+   "id": "samba.adduser",
+   "cat": "pack.samba",
+   "group": "tasks",
+   "name": {
+    "th": "เพิ่มผู้ใช้ Samba",
+    "en": "Add Samba user"
+   },
+   "keywords": [
+    "samba",
+    "samba (file sharing)"
+   ],
+   "template": "sudo smbpasswd -a {user}",
+   "risk": "medium"
+  }
+ ]
+}

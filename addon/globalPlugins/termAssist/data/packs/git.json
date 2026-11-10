@@ -1,0 +1,279 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.git",
+   "name": {
+    "th": "Git",
+    "en": "Git"
+   },
+   "detect": "git",
+   "install": "git"
+  }
+ ],
+ "params": {
+  "branch": {
+   "th": "สาขา (branch)",
+   "en": "Branch",
+   "default": "",
+   "source": "git branch --format='%(refname:short)'"
+  }
+ },
+ "commands": [
+  {
+   "id": "git.ver",
+   "cat": "pack.git",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน Git",
+    "en": "Git version"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git --version",
+   "risk": "low"
+  },
+  {
+   "id": "git.status",
+   "cat": "pack.git",
+   "group": "status",
+   "name": {
+    "th": "สถานะแบบย่อ",
+    "en": "Short status"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git status -sb",
+   "risk": "low"
+  },
+  {
+   "id": "git.log",
+   "cat": "pack.git",
+   "group": "status",
+   "name": {
+    "th": "10 commit ล่าสุด",
+    "en": "Last 10 commits"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git log --oneline -n 10",
+   "risk": "low"
+  },
+  {
+   "id": "git.branches",
+   "cat": "pack.git",
+   "group": "status",
+   "name": {
+    "th": "สาขาทั้งหมด",
+    "en": "All branches"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git branch -a",
+   "risk": "low"
+  },
+  {
+   "id": "git.remote",
+   "cat": "pack.git",
+   "group": "status",
+   "name": {
+    "th": "ดู remote",
+    "en": "Show remotes"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git remote -v",
+   "risk": "low"
+  },
+  {
+   "id": "git.diffstat",
+   "cat": "pack.git",
+   "group": "status",
+   "name": {
+    "th": "สรุปไฟล์ที่เปลี่ยน",
+    "en": "Changed files summary"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git diff --stat",
+   "risk": "low"
+  },
+  {
+   "id": "git.pull",
+   "cat": "pack.git",
+   "group": "tasks",
+   "name": {
+    "th": "ดึงโค้ดล่าสุด",
+    "en": "Pull"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git pull",
+   "risk": "medium"
+  },
+  {
+   "id": "git.fetch",
+   "cat": "pack.git",
+   "group": "tasks",
+   "name": {
+    "th": "ดึงข้อมูล remote (ไม่รวม)",
+    "en": "Fetch all"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git fetch --all",
+   "risk": "low"
+  },
+  {
+   "id": "git.checkout",
+   "cat": "pack.git",
+   "group": "tasks",
+   "name": {
+    "th": "สลับสาขา",
+    "en": "Switch branch"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git switch {branch}",
+   "risk": "medium"
+  },
+  {
+   "id": "git.commit",
+   "cat": "pack.git",
+   "group": "tasks",
+   "name": {
+    "th": "บันทึกทุกการเปลี่ยนแปลง",
+    "en": "Commit all changes"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git add -A && git commit -m '{text}'",
+   "risk": "medium"
+  },
+  {
+   "id": "git.push",
+   "cat": "pack.git",
+   "group": "tasks",
+   "name": {
+    "th": "ส่งขึ้น remote",
+    "en": "Push"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git push",
+   "risk": "medium"
+  },
+  {
+   "id": "git.clone",
+   "cat": "pack.git",
+   "group": "tasks",
+   "name": {
+    "th": "โคลนโปรเจกต์",
+    "en": "Clone repository"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git clone {url}",
+   "risk": "low"
+  },
+  {
+   "id": "git.stash",
+   "cat": "pack.git",
+   "group": "tasks",
+   "name": {
+    "th": "เก็บการเปลี่ยนแปลงชั่วคราว",
+    "en": "Stash changes"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git stash",
+   "risk": "medium"
+  },
+  {
+   "id": "git.pop",
+   "cat": "pack.git",
+   "group": "tasks",
+   "name": {
+    "th": "นำการเปลี่ยนแปลงที่เก็บไว้กลับมา",
+    "en": "Pop stash"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git stash pop",
+   "risk": "medium"
+  },
+  {
+   "id": "git.name",
+   "cat": "pack.git",
+   "group": "config",
+   "name": {
+    "th": "ตั้งชื่อผู้ commit",
+    "en": "Set commit author name"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git config --global user.name '{name}'",
+   "risk": "low"
+  },
+  {
+   "id": "git.discard",
+   "cat": "pack.git",
+   "group": "fix",
+   "name": {
+    "th": "ยกเลิกการแก้ไขไฟล์",
+    "en": "Discard changes to file"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git restore {file}",
+   "risk": "high"
+  },
+  {
+   "id": "git.hard",
+   "cat": "pack.git",
+   "group": "fix",
+   "name": {
+    "th": "ย้อนทุกอย่างกลับเป็น commit ล่าสุด",
+    "en": "Reset everything to last commit"
+   },
+   "keywords": [
+    "git",
+    "git"
+   ],
+   "template": "git reset --hard",
+   "risk": "high"
+  }
+ ]
+}

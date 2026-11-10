@@ -1,0 +1,167 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.certbot",
+   "name": {
+    "th": "Certbot (SSL)",
+    "en": "Certbot (SSL)"
+   },
+   "detect": "certbot",
+   "install": "certbot"
+  }
+ ],
+ "params": {},
+ "commands": [
+  {
+   "id": "certbot.ver",
+   "cat": "pack.certbot",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน",
+    "en": "Version"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "certbot --version",
+   "risk": "low"
+  },
+  {
+   "id": "certbot.certs",
+   "cat": "pack.certbot",
+   "group": "status",
+   "name": {
+    "th": "ดูใบรับรองและวันหมดอายุ",
+    "en": "Certificates and expiry"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "sudo certbot certificates",
+   "risk": "low"
+  },
+  {
+   "id": "certbot.timer",
+   "cat": "pack.certbot",
+   "group": "status",
+   "name": {
+    "th": "ตรวจการต่ออายุอัตโนมัติ",
+    "en": "Auto-renew timer"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "systemctl list-timers --no-pager | grep -i certbot",
+   "risk": "low"
+  },
+  {
+   "id": "certbot.dry",
+   "cat": "pack.certbot",
+   "group": "test",
+   "name": {
+    "th": "ทดสอบการต่ออายุ (ไม่ต่อจริง)",
+    "en": "Renewal dry run"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "sudo certbot renew --dry-run",
+   "risk": "low"
+  },
+  {
+   "id": "certbot.renew",
+   "cat": "pack.certbot",
+   "group": "control",
+   "name": {
+    "th": "ต่ออายุใบรับรอง",
+    "en": "Renew certificates"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "sudo certbot renew",
+   "risk": "medium"
+  },
+  {
+   "id": "certbot.log",
+   "cat": "pack.certbot",
+   "group": "logs",
+   "name": {
+    "th": "log ของ certbot",
+    "en": "Certbot log"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "sudo tail -n 50 /var/log/letsencrypt/letsencrypt.log",
+   "risk": "low"
+  },
+  {
+   "id": "certbot.nginx",
+   "cat": "pack.certbot",
+   "group": "tasks",
+   "name": {
+    "th": "ขอใบรับรองสำหรับ Nginx",
+    "en": "New certificate for Nginx"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "sudo certbot --nginx -d {domain}",
+   "risk": "medium"
+  },
+  {
+   "id": "certbot.apache",
+   "cat": "pack.certbot",
+   "group": "tasks",
+   "name": {
+    "th": "ขอใบรับรองสำหรับ Apache",
+    "en": "New certificate for Apache"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "sudo certbot --apache -d {domain}",
+   "risk": "medium"
+  },
+  {
+   "id": "certbot.expiry",
+   "cat": "pack.certbot",
+   "group": "tasks",
+   "name": {
+    "th": "ดูวันหมดอายุของเว็บใด ๆ",
+    "en": "Expiry date of any site"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "echo | openssl s_client -servername {domain} -connect {domain}:443 2>/dev/null | openssl x509 -noout -dates",
+   "risk": "low"
+  },
+  {
+   "id": "certbot.delete",
+   "cat": "pack.certbot",
+   "group": "fix",
+   "name": {
+    "th": "ลบใบรับรอง",
+    "en": "Delete certificate"
+   },
+   "keywords": [
+    "certbot",
+    "certbot (ssl)"
+   ],
+   "template": "sudo certbot delete --cert-name {domain}",
+   "risk": "high"
+  }
+ ]
+}

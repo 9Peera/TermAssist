@@ -1,0 +1,300 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.postgres",
+   "name": {
+    "th": "PostgreSQL",
+    "en": "PostgreSQL"
+   },
+   "detect": "psql",
+   "install": "postgresql"
+  }
+ ],
+ "params": {
+  "pgdb": {
+   "th": "ฐานข้อมูล",
+   "en": "Database",
+   "default": "",
+   "source": "sudo -u postgres psql -Atc 'SELECT datname FROM pg_database WHERE NOT datistemplate'"
+  },
+  "pguser": {
+   "th": "ผู้ใช้ฐานข้อมูล",
+   "en": "Database role",
+   "default": "",
+   "source": "sudo -u postgres psql -Atc 'SELECT rolname FROM pg_roles WHERE rolcanlogin'"
+  }
+ },
+ "commands": [
+  {
+   "id": "postgres.ver",
+   "cat": "pack.postgres",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน",
+    "en": "Version"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "psql --version",
+   "risk": "low"
+  },
+  {
+   "id": "postgres.status",
+   "cat": "pack.postgres",
+   "group": "status",
+   "name": {
+    "th": "ดูสถานะบริการ",
+    "en": "Service status"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "systemctl status postgresql --no-pager",
+   "risk": "low"
+  },
+  {
+   "id": "postgres.clusters",
+   "cat": "pack.postgres",
+   "group": "status",
+   "name": {
+    "th": "ดูคลัสเตอร์ทั้งหมด",
+    "en": "List clusters"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "pg_lsclusters",
+   "risk": "low"
+  },
+  {
+   "id": "postgres.restart",
+   "cat": "pack.postgres",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ท",
+    "en": "Restart"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo systemctl restart postgresql",
+   "risk": "medium"
+  },
+  {
+   "id": "postgres.reload",
+   "cat": "pack.postgres",
+   "group": "control",
+   "name": {
+    "th": "โหลดค่าตั้งใหม่",
+    "en": "Reload"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo systemctl reload postgresql",
+   "risk": "medium"
+  },
+  {
+   "id": "postgres.log",
+   "cat": "pack.postgres",
+   "group": "logs",
+   "name": {
+    "th": "log 50 บรรทัด",
+    "en": "Log, 50 lines"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo sh -c 'tail -n 50 /var/log/postgresql/*.log'",
+   "risk": "low"
+  },
+  {
+   "id": "postgres.conf",
+   "cat": "pack.postgres",
+   "group": "config",
+   "name": {
+    "th": "แก้ไข postgresql.conf",
+    "en": "Edit postgresql.conf"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo sh -c 'nano /etc/postgresql/*/main/postgresql.conf'",
+   "risk": "medium"
+  },
+  {
+   "id": "postgres.hba",
+   "cat": "pack.postgres",
+   "group": "config",
+   "name": {
+    "th": "แก้ไข pg_hba.conf (สิทธิ์การเชื่อมต่อ)",
+    "en": "Edit pg_hba.conf"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo sh -c 'nano /etc/postgresql/*/main/pg_hba.conf'",
+   "risk": "medium"
+  },
+  {
+   "id": "postgres.open",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "เข้า psql",
+    "en": "Open psql"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres psql",
+   "risk": "low"
+  },
+  {
+   "id": "postgres.dbs",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "รายการฐานข้อมูล",
+    "en": "List databases"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres psql -Atc 'SELECT datname FROM pg_database WHERE NOT datistemplate'",
+   "risk": "low"
+  },
+  {
+   "id": "postgres.size",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "ขนาดของแต่ละฐานข้อมูล",
+    "en": "Database sizes"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres psql -Atc \"SELECT datname, pg_size_pretty(pg_database_size(datname)) FROM pg_database\"",
+   "risk": "low"
+  },
+  {
+   "id": "postgres.createdb",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "สร้างฐานข้อมูล",
+    "en": "Create database"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres createdb {name}",
+   "risk": "medium"
+  },
+  {
+   "id": "postgres.createuser",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "สร้างผู้ใช้ (ถามรหัสผ่าน)",
+    "en": "Create role (asks password)"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres createuser --pwprompt {name}",
+   "risk": "medium"
+  },
+  {
+   "id": "postgres.owner",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "ให้ผู้ใช้เป็นเจ้าของฐานข้อมูล",
+    "en": "Make role owner of database"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres psql -c 'ALTER DATABASE {pgdb} OWNER TO {pguser}'",
+   "risk": "medium"
+  },
+  {
+   "id": "postgres.dump",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "สำรองฐานข้อมูล",
+    "en": "Back up database"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres pg_dump {pgdb} > {pgdb}-$(date +%Y%m%d).sql",
+   "risk": "low"
+  },
+  {
+   "id": "postgres.restore",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "นำเข้าไฟล์ SQL",
+    "en": "Restore SQL file"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres psql {pgdb} < {file}",
+   "risk": "high"
+  },
+  {
+   "id": "postgres.drop",
+   "cat": "pack.postgres",
+   "group": "tasks",
+   "name": {
+    "th": "ลบฐานข้อมูล",
+    "en": "Drop database"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo -u postgres dropdb {pgdb}",
+   "risk": "high"
+  },
+  {
+   "id": "postgres.port",
+   "cat": "pack.postgres",
+   "group": "fix",
+   "name": {
+    "th": "ตรวจพอร์ต 5432",
+    "en": "Check port 5432"
+   },
+   "keywords": [
+    "postgres",
+    "postgresql"
+   ],
+   "template": "sudo ss -tlpn | grep ':5432 '",
+   "risk": "low"
+  }
+ ]
+}

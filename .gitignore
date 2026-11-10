@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+*.nvda-addon
+addon/doc/*/readme.html

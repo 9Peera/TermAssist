@@ -1,0 +1,255 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "pack.node",
+   "name": {
+    "th": "Node.js / PM2",
+    "en": "Node.js / PM2"
+   },
+   "detect": "node",
+   "install": "nodejs npm"
+  }
+ ],
+ "params": {
+  "pm2app": {
+   "th": "แอปใน PM2",
+   "en": "PM2 app",
+   "default": "",
+   "source": "pm2 jlist 2>/dev/null | grep -o '\"name\":\"[^\"]*\"' | cut -d'\"' -f4 | sort -u"
+  },
+  "script": {
+   "th": "ชื่อสคริปต์ใน package.json",
+   "en": "package.json script",
+   "default": "",
+   "source": "node -e \"console.log(Object.keys(require('./package.json').scripts||{}).join('\\n'))\""
+  }
+ },
+ "commands": [
+  {
+   "id": "node.ver",
+   "cat": "pack.node",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน Node และ npm",
+    "en": "Node and npm versions"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "node -v; npm -v",
+   "risk": "low"
+  },
+  {
+   "id": "node.pm2ver",
+   "cat": "pack.node",
+   "group": "check",
+   "name": {
+    "th": "ดูเวอร์ชัน PM2",
+    "en": "PM2 version"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 -v",
+   "risk": "low"
+  },
+  {
+   "id": "node.ls",
+   "cat": "pack.node",
+   "group": "status",
+   "name": {
+    "th": "แอปทั้งหมดใน PM2",
+    "en": "PM2 app list"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 ls",
+   "risk": "low"
+  },
+  {
+   "id": "node.describe",
+   "cat": "pack.node",
+   "group": "status",
+   "name": {
+    "th": "รายละเอียดแอป",
+    "en": "App details"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 describe {pm2app}",
+   "risk": "low"
+  },
+  {
+   "id": "node.restart",
+   "cat": "pack.node",
+   "group": "control",
+   "name": {
+    "th": "รีสตาร์ทแอป",
+    "en": "Restart app"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 restart {pm2app}",
+   "risk": "medium"
+  },
+  {
+   "id": "node.reload",
+   "cat": "pack.node",
+   "group": "control",
+   "name": {
+    "th": "รีโหลดแอปแบบไม่หยุดบริการ",
+    "en": "Zero-downtime reload"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 reload {pm2app}",
+   "risk": "medium"
+  },
+  {
+   "id": "node.start",
+   "cat": "pack.node",
+   "group": "control",
+   "name": {
+    "th": "เริ่มแอปใหม่ใน PM2",
+    "en": "Start new app in PM2"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 start {file} --name {name}",
+   "risk": "medium"
+  },
+  {
+   "id": "node.stop",
+   "cat": "pack.node",
+   "group": "control",
+   "name": {
+    "th": "หยุดแอป",
+    "en": "Stop app"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 stop {pm2app}",
+   "risk": "high"
+  },
+  {
+   "id": "node.save",
+   "cat": "pack.node",
+   "group": "control",
+   "name": {
+    "th": "บันทึกรายการแอปให้เริ่มหลังรีบูต",
+    "en": "Save app list for reboot"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 save",
+   "risk": "medium"
+  },
+  {
+   "id": "node.logs",
+   "cat": "pack.node",
+   "group": "logs",
+   "name": {
+    "th": "log ของแอป 50 บรรทัด",
+    "en": "App log, 50 lines"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 logs {pm2app} --lines 50 --nostream",
+   "risk": "low"
+  },
+  {
+   "id": "node.logsf",
+   "cat": "pack.node",
+   "group": "logs",
+   "name": {
+    "th": "ติดตาม log ของแอป",
+    "en": "Follow app log"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "pm2 logs {pm2app}",
+   "risk": "low"
+  },
+  {
+   "id": "node.install",
+   "cat": "pack.node",
+   "group": "tasks",
+   "name": {
+    "th": "ติดตั้งแพ็กเกจของโปรเจกต์",
+    "en": "npm install"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "npm install",
+   "risk": "medium"
+  },
+  {
+   "id": "node.ci",
+   "cat": "pack.node",
+   "group": "tasks",
+   "name": {
+    "th": "ติดตั้งตาม lock file",
+    "en": "npm ci"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "npm ci",
+   "risk": "medium"
+  },
+  {
+   "id": "node.run",
+   "cat": "pack.node",
+   "group": "tasks",
+   "name": {
+    "th": "รันสคริปต์ npm",
+    "en": "Run npm script"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "npm run {script}",
+   "risk": "medium"
+  },
+  {
+   "id": "node.outdated",
+   "cat": "pack.node",
+   "group": "tasks",
+   "name": {
+    "th": "แพ็กเกจที่ล้าสมัย",
+    "en": "Outdated packages"
+   },
+   "keywords": [
+    "node",
+    "node.js / pm2"
+   ],
+   "template": "npm outdated",
+   "risk": "low"
+  }
+ ]
+}
