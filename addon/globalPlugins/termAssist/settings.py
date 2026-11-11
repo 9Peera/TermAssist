@@ -8,26 +8,11 @@ from gui.settingsDialogs import SettingsPanel
 from . import prompt
 from .i18n import tr
 
-SECTION = "termAssist"
-confspec = {
-	"language": 'option("auto", "th", "en", default="auto")',
-	"announceDone": "boolean(default=True)",
-	"speakLineCount": "boolean(default=False)",
-	"notifyBackground": "boolean(default=True)",
-	"errorSound": "boolean(default=True)",
-	"passwordGuard": "boolean(default=True)",
-	"sendMethod": 'option("paste", "type", default="paste")',
-	"clearLineKeys": 'string(default="control+e,control+u")',
-	"promptRegex": 'string(default="")',
-	"pollInterval": "integer(default=400, min=150, max=2000)",
-	"historySize": "integer(default=5000, min=500, max=50000)",
-	"profileAnnounce": "boolean(default=True)",
-	"extraApps": 'string(default="mobaxterm")',
-}
+from .confspec import SECTION, confspec, register
 
 
 def init():
-	config.conf.spec[SECTION] = confspec
+	register()
 
 
 def conf():

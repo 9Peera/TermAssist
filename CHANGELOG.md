@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 — 2026-11-11
+
+* Fixed: the add-on failed to start with `KeyError: 'termAssist'` when NVDA's configuration had no TermAssist section yet (for example after a fresh install or a configuration reset). The configuration section is now registered before anything reads it.
+* Added a regression test that mimics NVDA's configuration cache.
+
 ## 1.0.0 — 2026-11-10
 
 First public release.

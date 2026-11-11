@@ -20,6 +20,7 @@ from keyboardHandler import KeyboardInputGesture
 from logHandler import log
 from scriptHandler import script
 
+from . import confspec  # noqa: F401  must be first: registers config before anything reads it
 from . import adapters, dialogs, library, modal, profiles, prompt, sender, settings, tracker
 from .i18n import lang, tr
 

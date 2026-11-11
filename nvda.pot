@@ -7,207 +7,207 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: globalPlugins/termAssist/__init__.py:415
+#: globalPlugins/termAssist/__init__.py:416
 msgid "Press NVDA+Control+Shift+P, then:"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:303
+#: globalPlugins/termAssist/__init__.py:304
 msgid "TermAssist: status of nano, vim, pager, top or htop"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:331
+#: globalPlugins/termAssist/__init__.py:332
 msgid "Getting the list from the server"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:395
+#: globalPlugins/termAssist/__init__.py:396
 msgid "Enter the TermAssist command layer"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:416
+#: globalPlugins/termAssist/__init__.py:417
 msgid "TermAssist help"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:411
+#: globalPlugins/termAssist/__init__.py:412
 msgid "TermAssist: list layer commands"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:443
+#: globalPlugins/termAssist/__init__.py:444
 msgid "TermAssist: read the current command"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:451
+#: globalPlugins/termAssist/__init__.py:452
 msgid "TermAssist: read the top line of the screen"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:458
+#: globalPlugins/termAssist/__init__.py:459
 msgid "TermAssist: read the bottom line of the screen"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:465
+#: globalPlugins/termAssist/__init__.py:466
 msgid "TermAssist: summary of the last command"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:492
+#: globalPlugins/termAssist/__init__.py:493
 msgid "Output: "
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:483
+#: globalPlugins/termAssist/__init__.py:484
 msgid "TermAssist: view output of the last command"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:504
+#: globalPlugins/termAssist/__init__.py:505
 msgid "Terminal history"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:495
+#: globalPlugins/termAssist/__init__.py:496
 msgid "TermAssist: view the whole output history"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:506
+#: globalPlugins/termAssist/__init__.py:507
 msgid "TermAssist: session information"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:531
+#: globalPlugins/termAssist/__init__.py:532
 msgid "TermAssist: toggle the command finished sound"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:580
+#: globalPlugins/termAssist/__init__.py:581
 msgid "TermAssist diagnostics (copied)"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:537
+#: globalPlugins/termAssist/__init__.py:538
 msgid "TermAssist: diagnostics report"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:583
+#: globalPlugins/termAssist/__init__.py:584
 msgid "TermAssist: edit the current command line"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:597
+#: globalPlugins/termAssist/__init__.py:598
 msgid "TermAssist: compose multi-line text or write a file"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:611
+#: globalPlugins/termAssist/__init__.py:612
 msgid "TermAssist: command library"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:664
+#: globalPlugins/termAssist/__init__.py:665
 msgid "Service not installed"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:163
+#: globalPlugins/termAssist/__init__.py:164
 msgid "Not in a terminal"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:311
+#: globalPlugins/termAssist/__init__.py:312
 msgid "No full-screen program detected"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:324
+#: globalPlugins/termAssist/__init__.py:325
 msgid "The terminal is not at a prompt; type the value instead"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:354
+#: globalPlugins/termAssist/__init__.py:355
 msgid "No answer from the server"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:367
+#: globalPlugins/termAssist/__init__.py:368
 msgid "Password prompt, typing echo muted"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:426
+#: globalPlugins/termAssist/__init__.py:427
 msgid "No line"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:429
+#: globalPlugins/termAssist/__init__.py:430
 msgid "blank"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:438
+#: globalPlugins/termAssist/__init__.py:439
 msgid "Nothing to copy"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:441
+#: globalPlugins/termAssist/__init__.py:442
 msgid "Copied: "
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:449
+#: globalPlugins/termAssist/__init__.py:450
 msgid "Command line is empty"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:475
+#: globalPlugins/termAssist/__init__.py:476
 msgid "No command yet"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:490
+#: globalPlugins/termAssist/__init__.py:491
 msgid "No output"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:502
+#: globalPlugins/termAssist/__init__.py:503
 msgid "No history"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:518
+#: globalPlugins/termAssist/__init__.py:519
 msgid "Prompt not recognized"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:521
+#: globalPlugins/termAssist/__init__.py:522
 msgid "command running"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:535
+#: globalPlugins/termAssist/__init__.py:536
 msgid "Finished sound on"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:535
+#: globalPlugins/termAssist/__init__.py:536
 msgid "Finished sound off"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:651
+#: globalPlugins/termAssist/__init__.py:652
 msgid "Checking which services this server has"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:666
+#: globalPlugins/termAssist/__init__.py:667
 msgid "&Install"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:666
+#: globalPlugins/termAssist/__init__.py:667
 msgid "&Use anyway"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:666
+#: globalPlugins/termAssist/__init__.py:667
 msgid "Cancel"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:685
+#: globalPlugins/termAssist/__init__.py:686
 msgid "none"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:299
+#: globalPlugins/termAssist/__init__.py:300
 msgid "End"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:672
+#: globalPlugins/termAssist/__init__.py:673
 msgid "Installing. Run Detect services again when it finishes."
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:706
+#: globalPlugins/termAssist/__init__.py:707
 msgid "(Leave blank and press OK to choose from a list on the server)"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:753
+#: globalPlugins/termAssist/__init__.py:754
 msgid "Confirm"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:708
+#: globalPlugins/termAssist/__init__.py:709
 msgid "(Type the value. Press Cancel to stop.)"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:719
+#: globalPlugins/termAssist/__init__.py:720
 msgid "A value is required; command not sent"
 msgstr ""
 
-#: globalPlugins/termAssist/__init__.py:730
+#: globalPlugins/termAssist/__init__.py:731
 msgid "No items. "
 msgstr ""
 
@@ -387,62 +387,62 @@ msgstr ""
 msgid "Content of a &file"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:68
+#: globalPlugins/termAssist/settings.py:53
 msgid "&Method for sending text:"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:76
+#: globalPlugins/termAssist/settings.py:61
 msgid "&Keys that clear the command line:"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:79
+#: globalPlugins/termAssist/settings.py:64
 msgid "Custom prompt &regular expression (empty = default):"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:83
+#: globalPlugins/termAssist/settings.py:68
 msgid "Other terminal programs, experimental (app names, comma separated):"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:87
+#: globalPlugins/termAssist/settings.py:72
 msgid "Check the screen every (&milliseconds):"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:91
+#: globalPlugins/termAssist/settings.py:76
 msgid "&History size (lines):"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:56
+#: globalPlugins/termAssist/settings.py:41
 msgid "Beep when a command &finishes"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:57
+#: globalPlugins/termAssist/settings.py:42
 msgid "Speak the number of output &lines when done"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:58
+#: globalPlugins/termAssist/settings.py:43
 msgid "Announce when a command finishes in a terminal that is &not focused"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:59
+#: globalPlugins/termAssist/settings.py:44
 msgid "Play a sound when the output contains an &error"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:60
+#: globalPlugins/termAssist/settings.py:45
 msgid "Mute typed characters at &password prompts"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:61
+#: globalPlugins/termAssist/settings.py:46
 msgid "Announce nano, vim and pager &status changes"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:99
+#: globalPlugins/termAssist/settings.py:84
 msgid "The prompt regular expression is not valid."
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:71
+#: globalPlugins/termAssist/settings.py:56
 msgid "Paste through the clipboard (Shift+Insert)"
 msgstr ""
 
-#: globalPlugins/termAssist/settings.py:72
+#: globalPlugins/termAssist/settings.py:57
 msgid "Type characters directly (PuTTY family only)"
 msgstr ""

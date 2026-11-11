@@ -21,13 +21,42 @@ class Conf(dict):
 	pass
 
 
-conf = Conf(termAssist=Conf(language="auto", announceDone=True, speakLineCount=True, notifyBackground=True, errorSound=True,
-	passwordGuard=True, sendMethod="paste", clearLineKeys="control+e,control+u", promptRegex="",
-	pollInterval=400, historySize=5000, profileAnnounce=True, extraApps="mobaxterm"),
-	keyboard=Conf(speakTypedCharacters=True, speakTypedWords=False))
+import ast
+import re
+
+
+class NVDALikeConf:
+	"""Mimics NVDA's AggregatedSection: a missing section is cached as KeyError (the 1.0.0 bug)."""
+
+	def __init__(self, data):
+		self.spec = {}
+		self._data = data
+		self._cache = {}
+
+	def __getitem__(self, key):
+		if key in self._cache:
+			if self._cache[key] is KeyError:
+				raise KeyError(key)
+			return self._cache[key]
+		if key in self._data:
+			val = self._data[key]
+		elif isinstance(self.spec.get(key), dict):
+			val = Conf()
+			for k, v in self.spec[key].items():
+				m = re.search(r"default=(\"[^\"]*\"|[^,)]+)", v)
+				d = m.group(1)
+				val[k] = ast.literal_eval(d) if d.startswith('"') else {"True": True, "False": False}.get(d, int(d) if d.isdigit() else d)
+		else:
+			self._cache[key] = KeyError
+			raise KeyError(key)
+		self._cache[key] = val
+		return val
+
+
+# nvda.ini without a [termAssist] section, like the user's machine after the update
+conf = NVDALikeConf({"keyboard": Conf(speakTypedCharacters=True, speakTypedWords=False)})
 mod("config", conf=conf)
 config = sys.modules["config"]
-config.conf.spec = {}
 
 
 def script(**kw):
@@ -169,6 +198,8 @@ s = termAssist.Session(ad, 5000)
 p._sessions[42] = s
 p._focusSession = s
 c = conf["termAssist"]
+assert c["language"] == "auto" and c["pollInterval"] == 400
+print("config section ok (registered before first read)")
 
 ad.screen = ["Welcome", "peera@srv:~$ ls -la"]
 p._onTimer()

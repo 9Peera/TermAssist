@@ -1,7 +1,7 @@
 # TermAssist — terminal assistant
 
 * Author: Peera Pilarit
-* Version: 1.0.0
+* Version: 1.0.1
 * NVDA compatibility: 2026.1 and later (tested with 2026.3)
 * Source code and issues: https://github.com/9Peera/termAssist
 

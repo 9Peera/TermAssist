@@ -7,6 +7,8 @@
 import addonHandler
 import languageHandler
 
+from . import confspec  # noqa: F401  registers the config section before any read
+
 try:
 	addonHandler.initTranslation()  # defines _ in this module
 except Exception:  # pragma: no cover - outside NVDA
