@@ -1,0 +1,60 @@
+# Build the add-on and publish a GitHub Release when the version in addon/manifest.ini is new.
+# สร้างไฟล์ส่วนเสริมและ Release อัตโนมัติ เมื่อเวอร์ชันใน addon/manifest.ini ยังไม่เคยออก
+name: Build and release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Read version
+        id: ver
+        run: |
+          v=$(sed -n 's/^version *= *//p' addon/manifest.ini | tr -d '\r')
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "Version: $v"
+
+      - name: Check whether the release exists
+        id: exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.ver.outputs.version }}" >/dev/null 2>&1; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Test and build
+        if: steps.exists.outputs.found == 'false'
+        run: |
+          pip install -r requirements-dev.txt
+          python tests/test_core.py
+          python tests/smoke_nvda_stubs.py
+          python tools/build.py
+
+      - name: Publish release
+        if: steps.exists.outputs.found == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          v="${{ steps.ver.outputs.version }}"
+          notes=$(awk "/^## ${v//./\\.} /{f=1;next} /^## /{f=0} f" CHANGELOG.md)
+          gh release create "v$v" "termAssist-$v.nvda-addon" \
+            --target "${{ github.sha }}" \
+            --title "TermAssist $v" \
+            --notes "${notes:-TermAssist $v}"
+          echo "Download URL: https://github.com/${{ github.repository }}/releases/download/v$v/termAssist-$v.nvda-addon"
